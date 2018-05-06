@@ -1,12 +1,5 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- *
- * @author theph
+ @author Domen
  */
 public class RegisterUsers extends javax.swing.JPanel {
 
@@ -26,19 +19,146 @@ public class RegisterUsers extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        jConfirmationTextBox = new javax.swing.JPasswordField();
+        jNameTextBox = new javax.swing.JTextField();
+        jPasswordTextBox = new javax.swing.JPasswordField();
+        jNameLabel = new javax.swing.JLabel();
+        jEmailTextBox = new javax.swing.JTextField();
+        jEmailLabel = new javax.swing.JLabel();
+        jConfirmationLabel = new javax.swing.JLabel();
+        jSubmitButton = new javax.swing.JButton();
+        jClearlButton = new javax.swing.JButton();
+        jPasswordLabel = new javax.swing.JLabel();
+        jTitleLabel = new javax.swing.JLabel();
+
+        jNameTextBox.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jNameTextBoxMouseClicked(evt);
+            }
+        });
+
+        jNameLabel.setText("Name:");
+
+        jEmailLabel.setText("Email:");
+
+        jConfirmationLabel.setText("Confirmation:");
+
+        jSubmitButton.setText("Submit");
+        jSubmitButton.setActionCommand("Register");
+        jSubmitButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jSubmitButtonActionPerformed(evt);
+            }
+        });
+
+        jClearlButton.setText("Clear");
+
+        jPasswordLabel.setText("Password:");
+        jPasswordLabel.setToolTipText("");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(39, 39, 39)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jEmailLabel)
+                            .addComponent(jConfirmationLabel)
+                            .addComponent(jNameLabel)
+                            .addComponent(jPasswordLabel))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jPasswordTextBox)
+                            .addComponent(jEmailTextBox, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jConfirmationTextBox)
+                            .addComponent(jNameTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(153, 153, 153)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addComponent(jClearlButton))
+                            .addComponent(jSubmitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(60, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(49, 49, 49)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jNameLabel)
+                    .addComponent(jNameTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jEmailTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jEmailLabel))
+                .addGap(14, 14, 14)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jPasswordTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jConfirmationLabel))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jConfirmationTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPasswordLabel))
+                .addGap(18, 18, 18)
+                .addComponent(jSubmitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jClearlButton)
+                .addContainerGap(44, Short.MAX_VALUE))
+        );
+
+        jTitleLabel.setText("Create an Account");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTitleLabel)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jTitleLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jSubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSubmitButtonActionPerformed
+
+    }//GEN-LAST:event_jSubmitButtonActionPerformed
+
+    private void jNameTextBoxMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jNameTextBoxMouseClicked
+            jNameTextBox.setText(null);
+    }//GEN-LAST:event_jNameTextBoxMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jClearlButton;
+    private javax.swing.JLabel jConfirmationLabel;
+    private javax.swing.JPasswordField jConfirmationTextBox;
+    private javax.swing.JLabel jEmailLabel;
+    private javax.swing.JTextField jEmailTextBox;
+    private javax.swing.JLabel jNameLabel;
+    private javax.swing.JTextField jNameTextBox;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel jPasswordLabel;
+    private javax.swing.JPasswordField jPasswordTextBox;
+    private javax.swing.JButton jSubmitButton;
+    private javax.swing.JLabel jTitleLabel;
     // End of variables declaration//GEN-END:variables
+
+
+
 }
