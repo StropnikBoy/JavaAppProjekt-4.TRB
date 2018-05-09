@@ -48,7 +48,7 @@ Connection Conn = null;
         jKrajLabel = new javax.swing.JLabel();
         jTelLabel = new javax.swing.JLabel();
         jDateLabel = new javax.swing.JLabel();
-        jDanTextBox = new javax.swing.JTextField();
+        jDayTextBox = new javax.swing.JTextField();
         jMonthTextBox = new javax.swing.JTextField();
         jYearTextBox = new javax.swing.JTextField();
         jSurnameTextBox = new javax.swing.JTextField();
@@ -134,11 +134,11 @@ Connection Conn = null;
         jDateLabel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jDateLabel.setText("Datum rojstva:");
 
-        jDanTextBox.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jDanTextBox.setText("Dan");
-        jDanTextBox.addMouseListener(new java.awt.event.MouseAdapter() {
+        jDayTextBox.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jDayTextBox.setText("Dan");
+        jDayTextBox.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jDanTextBoxMouseClicked(evt);
+                jDayTextBoxMouseClicked(evt);
             }
         });
 
@@ -218,7 +218,7 @@ Connection Conn = null;
                                         .addComponent(jKrajComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(jTelTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGroup(jRegisterPanelLayout.createSequentialGroup()
-                                            .addComponent(jDanTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jDayTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addGap(18, 18, 18)
                                             .addComponent(jMonthTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addGap(18, 18, 18)
@@ -261,7 +261,7 @@ Connection Conn = null;
                     .addGroup(jRegisterPanelLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jRegisterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jDanTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jDayTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jMonthTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jYearTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jDateLabel))
@@ -328,9 +328,9 @@ Connection Conn = null;
         jMonthTextBox.setText(null);
     }//GEN-LAST:event_jMonthTextBoxMouseClicked
 
-    private void jDanTextBoxMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jDanTextBoxMouseClicked
-        jDanTextBox.setText(null);
-    }//GEN-LAST:event_jDanTextBoxMouseClicked
+    private void jDayTextBoxMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jDayTextBoxMouseClicked
+        jDayTextBox.setText(null);
+    }//GEN-LAST:event_jDayTextBoxMouseClicked
 
     private void jKrajComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jKrajComboBoxActionPerformed
       //Aa
@@ -353,13 +353,9 @@ Connection Conn = null;
             Connection Conn;
             Database povezava = new Database();
             Conn = povezava.getConnection();
-
-            Object varName = (Object)jKrajComboBox.getSelectedItem();
-            String varPost = varName.Convert.ToString;
             
-
-            String x = "HAah";   System.out.println(x.substring(0,4));
             String value = jKrajComboBox.getSelectedItem().toString();
+            System.out.println(value.substring(0,4));
 
             String name = jNameTextBox.getText();
             String surname = jSurnameTextBox.getText();
@@ -506,8 +502,8 @@ Connection Conn = null;
     private javax.swing.JButton jCloseButton;
     private javax.swing.JLabel jConfirmLabel;
     private javax.swing.JPasswordField jConfirmationTextBox;
-    private javax.swing.JTextField jDanTextBox;
     private javax.swing.JLabel jDateLabel;
+    private javax.swing.JTextField jDayTextBox;
     private javax.swing.JLabel jEmailLabel;
     private javax.swing.JTextField jEmailTextBox;
     private javax.swing.JComboBox<String> jKrajComboBox;

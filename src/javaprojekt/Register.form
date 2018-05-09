@@ -103,7 +103,7 @@
                                           <Component id="jKrajComboBox" min="-2" pref="400" max="-2" attributes="0"/>
                                           <Component id="jTelTextBox" min="-2" pref="400" max="-2" attributes="0"/>
                                           <Group type="102" alignment="0" attributes="0">
-                                              <Component id="jDanTextBox" min="-2" pref="100" max="-2" attributes="0"/>
+                                              <Component id="jDayTextBox" min="-2" pref="100" max="-2" attributes="0"/>
                                               <EmptySpace type="separate" max="-2" attributes="0"/>
                                               <Component id="jMonthTextBox" min="-2" pref="100" max="-2" attributes="0"/>
                                               <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -163,7 +163,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jDanTextBox" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
+                              <Component id="jDayTextBox" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
                               <Component id="jMonthTextBox" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
                               <Component id="jYearTextBox" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
                               <Component id="jDateLabel" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -328,7 +328,7 @@
             <Property name="text" type="java.lang.String" value="Datum rojstva:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jDanTextBox">
+        <Component class="javax.swing.JTextField" name="jDayTextBox">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="18" style="0"/>
@@ -336,7 +336,7 @@
             <Property name="text" type="java.lang.String" value="Dan"/>
           </Properties>
           <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jDanTextBoxMouseClicked"/>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jDayTextBoxMouseClicked"/>
           </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="jMonthTextBox">
