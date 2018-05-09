@@ -361,7 +361,7 @@ Connection Conn = null;
             String surname = jSurnameTextBox.getText();
             String email = jEmailTextBox.getText();
             String tel = jTelTextBox.getText();
-            String kraj_id = "SELECT id FROM residences WHERE post_number = " + x;
+            String kraj_id = "SELECT id FROM residences WHERE post_number LIKE " + x;
             String date = jYearTextBox.getText() + "-" + jMonthTextBox.getText() + "-" + jDayTextBox.getText();
             String password = jPasswordTextBox.getText();
             String confirmation = jConfirmationTextBox.getText();
@@ -391,36 +391,23 @@ Connection Conn = null;
         
         System.out.println(generatedPassword);
         
-        Statement stavek;
         ResultSet rezultati;
-        JOptionPane.showMessageDialog(null, "Uspešna registracija!");
         String sql = "SELECT usersview ('" + name + "', '" + surname + "', '" + email + "', '" + kraj_id + "', '" + tel + "', '" + date + "', '" + password + "', '" + confirmation + "', '" + rank + "')";
         
         try 
         {
-            stavek = Conn.createStatement();
-            rezultati = stavek.executeQuery(sql);
-            
-            while (rezultati.next()) {
-            int rezultat = rezultati.getInt(1);
-            
-            if(rezultat == 1)
-            {
+            Statement stavek = Conn.createStatement();
+
                 JOptionPane.showMessageDialog(null, "Uspešna registracija!");
                 String query = "SELECT register ('" + name + "', '" + surname + "', '" + email + "', " + kraj_id + ", '" + tel + "', '" + date + "', '" + password + "', '" + confirmation + "', " + rank + ")";
                 Statement statement = Conn.createStatement();
-                statement.executeUpdate(query);
+                statement.executeQuery(query);
                 this.setVisible(false);
                 Login Prijava = new Login();
                 Prijava.setVisible(true);
-            }
-            else
-            {
-                JOptionPane.showMessageDialog(null,"Email je ze v uporabi.");         
-            }
+
                 Conn.close();
-        }
-            
+        
         } catch (SQLException ex) {
             Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
         }
