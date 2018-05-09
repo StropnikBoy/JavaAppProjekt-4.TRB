@@ -4,6 +4,8 @@ import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.*;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 
 public class Login extends javax.swing.JFrame {
 Connection Conn = null;  
@@ -176,7 +178,155 @@ Connection Conn = null;
     }//GEN-LAST:event_jEmailTextBoxMouseClicked
 
     private void jLoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jLoginButtonActionPerformed
-        // TODO add your handling code here:
+        
+        String email = jEmailTextBox.getText();
+        String password = jPasswordTextBox.getText();
+        
+        String passwordToHash = password;
+        String generatedPassword = null;
+        
+        try {
+            MessageDigest md = MessageDigest.getInstance("MD5");
+            md.update(passwordToHash.getBytes());
+            byte[] bytes = md.digest();
+            StringBuilder sb = new StringBuilder();
+            for(int i=0; i< bytes.length ;i++)
+            {
+                sb.append(Integer.toString((bytes[i] & 0xff) + 0x100, 16).substring(1));
+            }
+            generatedPassword = sb.toString();
+        }
+        catch (NoSuchAlgorithmException e)
+        {
+            e.printStackTrace();
+        }
+        
+        Connection Conn;
+        Statement stavek;
+        ResultSet rezultati;
+        String sql = "SELECT * FROM users";
+        
+        Database povezava = new Database();
+        Conn = povezava.getConnection();
+        
+        try {
+            stavek = Conn.createStatement();
+            rezultati = stavek.executeQuery(sql);
+            
+            while (rezultati.next()) {
+            int rezultat = rezultati.getInt(1);
+            
+            if(rezultat == 1)
+        {
+            
+        Statement stavek2;
+        ResultSet rezultati2;
+        String sql2 = "SELECT * FROM izpis_uporabnika('"+ ime +"')";
+            
+            try {
+            stavek2 = con.createStatement();
+            
+            rezultati2 = stavek2.executeQuery(sql2);
+            
+            
+            while (rezultati2.next()) {
+            String rezultat2 = rezultati2.getString(1);
+            globalno.uporabnik_ime = rezultat2;
+            }
+            con.close();
+            } catch (SQLException ex) {
+            Logger.getLogger(prijavna_stran.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+            
+        this.setVisible(false);
+        domaca_stran_admin novo = new domaca_stran_admin();
+        novo.setVisible(true);
+        }
+            
+            
+            
+            // ČE NI ADMIN
+            
+            
+            
+        else
+        {
+            
+        Statement stavek1;
+        ResultSet rezultati1;
+        String sql1 = "SELECT * FROM prijava ('"+ ime +"', '"+ generatedPassword +"')";
+        
+        
+        try {
+            stavek1 = con.createStatement();
+            rezultati1 = stavek1.executeQuery(sql1);
+            
+            while (rezultati1.next()) {
+            int rezultat1 = rezultati1.getInt(1);
+            
+            if(rezultat1 == 1)
+        {
+            
+            Statement stavek2;
+        ResultSet rezultati2;
+        Statement stavek3;
+        ResultSet rezultati3;
+        String sql2 = "SELECT * FROM izpis_uporabnika('"+ ime +"')";
+        String sql3 = "SELECT * FROM izpis_idja('"+ ime +"')";
+            
+            try {
+            stavek2 = con.createStatement();
+            
+            rezultati2 = stavek2.executeQuery(sql2);
+            
+            stavek3 = con.createStatement();
+            
+            rezultati3 = stavek3.executeQuery(sql3);
+            
+            
+            while (rezultati2.next()) {
+            String rezultat2 = rezultati2.getString(1);
+            globalno.uporabnik_ime = rezultat2;
+            }
+            
+            while (rezultati3.next()) {
+            int rezultat3 = rezultati3.getInt(1);
+            globalno.id = rezultat3;
+            }
+            
+            } catch (SQLException ex) {
+            Logger.getLogger(prijavna_stran.class.getName()).log(Level.SEVERE, null, ex);
+        }
+            
+            
+            
+        this.setVisible(false);
+        domaca_stran novo = new domaca_stran();
+        novo.setVisible(true);
+        }
+        else
+                
+        {
+            JOptionPane.showMessageDialog(null,"Napačno geslo ali uporabniško ime!");
+            
+        }
+            
+            con.close();
+            
+        }
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(prijavna_stran.class.getName()).log(Level.SEVERE, null, ex);
+        }
+            
+        }
+            }
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(prijavna_stran.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
     }//GEN-LAST:event_jLoginButtonActionPerformed
 
     private void jClearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jClearButtonActionPerformed
