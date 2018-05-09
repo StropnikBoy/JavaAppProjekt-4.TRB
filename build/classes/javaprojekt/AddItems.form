@@ -29,80 +29,36 @@
                   <Component id="jNameLabel1" min="-2" max="-2" attributes="0"/>
                   <Component id="jNameLabel2" min="-2" max="-2" attributes="0"/>
                   <Component id="jNameLabel3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jNameLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="j3rdTypeTextBox1" pref="300" max="32767" attributes="0"/>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="j2ndtTypeTextBox" alignment="0" pref="300" max="32767" attributes="0"/>
-                      <Component id="j3rdTypeTextBox" alignment="0" max="32767" attributes="0"/>
-                      <Component id="j1stTypeTextBox" alignment="0" max="32767" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="jNameLabel4" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
+                      <Component id="j3rdTypeTextBox1" pref="300" max="32767" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="123" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="114" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="j1stTypeTextBox" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
-                  <Component id="jNameLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
+              <EmptySpace min="-2" pref="90" max="-2" attributes="0"/>
+              <Component id="jNameLabel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+              <Component id="jNameLabel2" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="28" max="32767" attributes="0"/>
+              <Component id="jNameLabel3" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="j3rdTypeTextBox" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
-                  <Component id="jNameLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="j2ndtTypeTextBox" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
-                  <Component id="jNameLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jNameLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="j3rdTypeTextBox1" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
+                  <Component id="jNameLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="88" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="125" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JTextField" name="j1stTypeTextBox">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Tahoma" size="18" style="0"/>
-        </Property>
-      </Properties>
-      <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="j1stTypeTextBoxMouseClicked"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JTextField" name="j2ndtTypeTextBox">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Tahoma" size="18" style="0"/>
-        </Property>
-      </Properties>
-      <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="j2ndtTypeTextBoxMouseClicked"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JTextField" name="j3rdTypeTextBox">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Tahoma" size="18" style="0"/>
-        </Property>
-      </Properties>
-      <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="j3rdTypeTextBoxMouseClicked"/>
-      </Events>
-    </Component>
     <Component class="javax.swing.JLabel" name="jNameLabel1">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
