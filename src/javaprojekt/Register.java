@@ -4,13 +4,15 @@
  * and open the template in the editor.
  */
 package javaprojekt;
-
+import java.sql.*;
+import javax.swing.*;
 /**
  *
  * @author theph
  */
 public class Register extends javax.swing.JFrame {
-
+Connection Conn = null;     
+    
     /**
      * Creates new form RegisterReal
      */
@@ -39,6 +41,16 @@ public class Register extends javax.swing.JFrame {
         jConfirmLabel = new javax.swing.JLabel();
         jSubmitButton = new javax.swing.JButton();
         jClearButton = new javax.swing.JButton();
+        jTelTextBox = new javax.swing.JTextField();
+        jKrajComboBox = new javax.swing.JComboBox<>();
+        jKrajLabel = new javax.swing.JLabel();
+        jTelLabel = new javax.swing.JLabel();
+        jDateLabel = new javax.swing.JLabel();
+        jDanTextBox = new javax.swing.JTextField();
+        jMonthTextBox = new javax.swing.JTextField();
+        jYearTextBox = new javax.swing.JTextField();
+        jSurnameTextBox = new javax.swing.JTextField();
+        jSurnameLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -52,6 +64,11 @@ public class Register extends javax.swing.JFrame {
         });
 
         jEmailTextBox.setText("Vnesi email...");
+        jEmailTextBox.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jEmailTextBoxMouseClicked(evt);
+            }
+        });
 
         jPasswordTextBox.setToolTipText("Vnesi geslo...");
 
@@ -66,65 +83,158 @@ public class Register extends javax.swing.JFrame {
         jConfirmLabel.setText("Confirmation:");
 
         jSubmitButton.setText("Submit");
+        jSubmitButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jSubmitButtonActionPerformed(evt);
+            }
+        });
 
         jClearButton.setText("Clear");
+
+        jTelTextBox.setText("Vnesi telefonsko...");
+        jTelTextBox.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTelTextBoxMouseClicked(evt);
+            }
+        });
+
+        jKrajComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jKrajComboBoxActionPerformed(evt);
+            }
+        });
+
+        jKrajLabel.setText("Kraj bivanja:");
+
+        jTelLabel.setText("Telefonska številka:");
+
+        jDateLabel.setText("Datum rojstva:");
+
+        jDanTextBox.setText("Dan");
+        jDanTextBox.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jDanTextBoxMouseClicked(evt);
+            }
+        });
+
+        jMonthTextBox.setText("Mesec");
+        jMonthTextBox.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMonthTextBoxMouseClicked(evt);
+            }
+        });
+
+        jYearTextBox.setText("Leto");
+        jYearTextBox.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jYearTextBoxMouseClicked(evt);
+            }
+        });
+
+        jSurnameTextBox.setText("Vnesi priimek..");
+        jSurnameTextBox.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jSurnameTextBoxMouseClicked(evt);
+            }
+        });
+
+        jSurnameLabel.setText("Name:");
 
         javax.swing.GroupLayout jRegisterPanelLayout = new javax.swing.GroupLayout(jRegisterPanel);
         jRegisterPanel.setLayout(jRegisterPanelLayout);
         jRegisterPanelLayout.setHorizontalGroup(
             jRegisterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jRegisterPanelLayout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jRegisterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTelLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jRegisterPanelLayout.createSequentialGroup()
                         .addGroup(jRegisterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jRegisterPanelLayout.createSequentialGroup()
-                                .addGap(20, 20, 20)
-                                .addGroup(jRegisterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jEmailLabel)
+                            .addComponent(jKrajLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jRegisterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(jRegisterPanelLayout.createSequentialGroup()
+                                    .addComponent(jConfirmLabel)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jConfirmationTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jRegisterPanelLayout.createSequentialGroup()
                                     .addComponent(jNameLabel)
-                                    .addComponent(jPasswordLabel))
-                                .addGap(18, 18, 18))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jRegisterPanelLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jConfirmLabel)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jRegisterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jPasswordTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jConfirmationTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jEmailTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jNameTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jRegisterPanelLayout.createSequentialGroup()
-                        .addGap(136, 136, 136)
-                        .addComponent(jClearButton))
-                    .addGroup(jRegisterPanelLayout.createSequentialGroup()
-                        .addGap(126, 126, 126)
-                        .addComponent(jSubmitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(35, Short.MAX_VALUE))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jNameTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jRegisterPanelLayout.createSequentialGroup()
+                                    .addComponent(jDateLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(27, 27, 27)
+                                    .addGroup(jRegisterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addGroup(jRegisterPanelLayout.createSequentialGroup()
+                                            .addComponent(jDanTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                            .addComponent(jMonthTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                            .addComponent(jYearTextBox, javax.swing.GroupLayout.DEFAULT_SIZE, 82, Short.MAX_VALUE))
+                                        .addComponent(jTelTextBox)
+                                        .addComponent(jKrajComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jRegisterPanelLayout.createSequentialGroup()
+                                    .addComponent(jPasswordLabel)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jPasswordTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jRegisterPanelLayout.createSequentialGroup()
+                                    .addGroup(jRegisterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jEmailLabel)
+                                        .addComponent(jSurnameLabel))
+                                    .addGap(85, 85, 85)
+                                    .addGroup(jRegisterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jSurnameTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jEmailTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addGap(0, 19, Short.MAX_VALUE)))
+                .addContainerGap())
+            .addGroup(jRegisterPanelLayout.createSequentialGroup()
+                .addGap(87, 87, 87)
+                .addComponent(jSubmitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31)
+                .addComponent(jClearButton)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jRegisterPanelLayout.setVerticalGroup(
             jRegisterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jRegisterPanelLayout.createSequentialGroup()
-                .addGap(38, 38, 38)
+                .addContainerGap()
                 .addGroup(jRegisterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jNameLabel)
                     .addComponent(jNameTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jRegisterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jSurnameTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jSurnameLabel))
+                .addGap(5, 5, 5)
+                .addGroup(jRegisterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jEmailLabel)
                     .addComponent(jEmailTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jRegisterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTelLabel)
+                    .addComponent(jTelTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jRegisterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jKrajLabel)
+                    .addComponent(jKrajComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jRegisterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jDateLabel)
+                    .addComponent(jDanTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jMonthTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jYearTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jRegisterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPasswordLabel)
                     .addComponent(jPasswordTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jRegisterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jConfirmLabel)
-                    .addComponent(jConfirmationTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(21, 21, 21)
-                .addComponent(jSubmitButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jClearButton)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jConfirmationTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jConfirmLabel))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jRegisterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jSubmitButton)
+                    .addComponent(jClearButton))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -132,23 +242,20 @@ public class Register extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(26, 26, 26)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(26, 26, 26)
-                        .addComponent(jTitleLabel))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jRegisterPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jRegisterPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTitleLabel))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jTitleLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addComponent(jRegisterPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
 
         pack();
@@ -157,6 +264,79 @@ public class Register extends javax.swing.JFrame {
     private void jNameTextBoxMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jNameTextBoxMouseClicked
         jNameTextBox.setText(null);
     }//GEN-LAST:event_jNameTextBoxMouseClicked
+
+    private void jEmailTextBoxMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jEmailTextBoxMouseClicked
+        jEmailTextBox.setText(null);
+    }//GEN-LAST:event_jEmailTextBoxMouseClicked
+
+    private void jSubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSubmitButtonActionPerformed
+        if ( jNameTextBox.getText().trim().length() == 0 
+                 || jSurnameTextBox.getText().trim().length() == 0
+                 || jEmailTextBox.getText().trim().length() == 0 
+                 || jTelTextBox.getText().trim().length() == 0)          
+    {
+        JOptionPane.showMessageDialog(null,"Izpolni podatke pravilno.");
+    }
+        
+        else
+         {
+            //izpis krajev v combobox
+            Connection Conn;
+            baza povezava = new baza();
+            Conn = povezava.getConnection();
+
+            Object varName = (Object)jKrajComboBox.getSelectedItem();
+            String value = jKrajComboBox.getSelectedItem().toString();
+
+            String name = jNameTextBox.getText();
+            String surname = jSurnameTextBox.getText();
+            String email = jEmailTextBox.getText();
+            String tel = jTelTextBox.getText();
+            String kraj = value;
+            String date = jYearTextBox.getText() + "-" + jMonthTextBox.getText() + "-" + jDayTextBox.getText();
+            String password = jPasswordTextBox.getText();
+         }
+    }//GEN-LAST:event_jSubmitButtonActionPerformed
+
+    private void jTelTextBoxMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTelTextBoxMouseClicked
+        jTelTextBox.setText(null);
+    }//GEN-LAST:event_jTelTextBoxMouseClicked
+
+    private void jKrajComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jKrajComboBoxActionPerformed
+        Connection Conn;
+        baza povezava = new baza();
+        Conn = povezava.getConnection();
+        
+        try {
+             Statement stmt = con.createStatement();
+        ResultSet rs = stmt.executeQuery("select * from izpis_krajev()");
+        while (rs.next()) {
+            String pat = rs.getString("ime_kraja");
+            
+            kraj_uporabnika.addItem(pat);
+        }
+        con.close();
+        }
+        catch (SQLException ex) {
+            Logger.getLogger(registracija.class.getName()).log(Level.SEVERE, null, ex);
+        } 
+    }//GEN-LAST:event_jKrajComboBoxActionPerformed
+
+    private void jDanTextBoxMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jDanTextBoxMouseClicked
+        jDanTextBox.setText(null);
+    }//GEN-LAST:event_jDanTextBoxMouseClicked
+
+    private void jMonthTextBoxMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMonthTextBoxMouseClicked
+        jMonthTextBox.setText(null);
+    }//GEN-LAST:event_jMonthTextBoxMouseClicked
+
+    private void jYearTextBoxMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jYearTextBoxMouseClicked
+        jYearTextBox.setText(null);
+    }//GEN-LAST:event_jYearTextBoxMouseClicked
+
+    private void jSurnameTextBoxMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jSurnameTextBoxMouseClicked
+        jSurnameTextBox.setText(null);
+    }//GEN-LAST:event_jSurnameTextBoxMouseClicked
 
     /**
      * @param args the command line arguments
@@ -198,14 +378,24 @@ public class Register extends javax.swing.JFrame {
     private javax.swing.JButton jClearButton;
     private javax.swing.JLabel jConfirmLabel;
     private javax.swing.JPasswordField jConfirmationTextBox;
+    private javax.swing.JTextField jDanTextBox;
+    private javax.swing.JLabel jDateLabel;
     private javax.swing.JLabel jEmailLabel;
     private javax.swing.JTextField jEmailTextBox;
+    private javax.swing.JComboBox<String> jKrajComboBox;
+    private javax.swing.JLabel jKrajLabel;
+    private javax.swing.JTextField jMonthTextBox;
     private javax.swing.JLabel jNameLabel;
     private javax.swing.JTextField jNameTextBox;
     private javax.swing.JLabel jPasswordLabel;
     private javax.swing.JPasswordField jPasswordTextBox;
     private javax.swing.JPanel jRegisterPanel;
     private javax.swing.JButton jSubmitButton;
+    private javax.swing.JLabel jSurnameLabel;
+    private javax.swing.JTextField jSurnameTextBox;
+    private javax.swing.JLabel jTelLabel;
+    private javax.swing.JTextField jTelTextBox;
     private javax.swing.JLabel jTitleLabel;
+    private javax.swing.JTextField jYearTextBox;
     // End of variables declaration//GEN-END:variables
 }
