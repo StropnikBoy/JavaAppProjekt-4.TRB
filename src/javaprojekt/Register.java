@@ -342,7 +342,7 @@ Connection Conn = null;
         if ( jNameTextBox.getText().trim().length() == 0
             || jSurnameTextBox.getText().trim().length() == 0
             || jEmailTextBox.getText().trim().length() == 0
-            || jTelTextBox.getText().trim().length() == 0 && jPasswordTextBox.GetText() == jConfirmationTextBox.GetText())
+            || jTelTextBox.getText().trim().length() == 0)
         {
             JOptionPane.showMessageDialog(null,"Izpolni podatke pravilno.");
         }
@@ -361,9 +361,10 @@ Connection Conn = null;
             String surname = jSurnameTextBox.getText();
             String email = jEmailTextBox.getText();
             String tel = jTelTextBox.getText();
-            String kraj = value;
+            String kraj_id = "SELECT id FROM residences WHERE post_number = ""
             String date = jYearTextBox.getText() + "-" + jMonthTextBox.getText() + "-" + jDayTextBox.getText();
             String password = jPasswordTextBox.getText();
+            String confirmation = jConfirmationTextBox.getText();
             Integer rank = 0;
 
             String passwordToHash = password;
@@ -392,7 +393,7 @@ Connection Conn = null;
         
         Statement stavek;
         ResultSet rezultati;
-        String sql = "SELECT usersview ('" + varPost + "', '" + name + "', '" + surname + "', '" + email + "', '" + tel + "', '" + date + "', '" + password + "', + '" + rank + "')";
+        String sql = "SELECT usersview ('" + name + "', '" + surname + "', '" + email + "', '" + kraj_id + "', '" + tel + "', '" + date + "', '" + password + "', '" + confirmation + "', '" + rank + "')";
         
         try 
         {
@@ -405,6 +406,7 @@ Connection Conn = null;
             if(rezultat == 1)
             {
                 JOptionPane.showMessageDialog(null, "Uspešna registracija!");
+                String sql = "SELECT register ('" + name + "', '" + surname + "', '" + email + "', '" + kraj_id + "', '" + tel + "', '" + date + "', '" + password + "', '" + confirmation + "', '" + rank + "')";
                 this.setVisible(false);
                 Login Prijava = new Login();
                 Prijava.setVisible(true);
