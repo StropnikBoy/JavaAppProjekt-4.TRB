@@ -42,7 +42,7 @@ Create table "residences"
 
 Create table "avatars"
 (
-	"id" Bigint NOT NULL,
+	"id" Serial NOT NULL,
 	"user_id" Integer NOT NULL,
 	"name" Varchar(50) NOT NULL,
 	"url" Varchar(150) NOT NULL,
@@ -52,7 +52,7 @@ Create table "avatars"
 
 Create table "orders"
 (
-	"id" Bigint NOT NULL,
+	"id" Serial NOT NULL,
 	"user_id" Integer NOT NULL,
 	"date" Date NOT NULL,
  primary key ("id")
@@ -61,28 +61,28 @@ Create table "orders"
 
 Create table "ads_orders"
 (
-	"id" Bigint NOT NULL,
-	"ad_id" Bigint NOT NULL,
-	"order_id" Bigint NOT NULL,
-	"quantity" Real NOT NULL,
+	"id" Serial NOT NULL,
+	"ad_id" Integer NOT NULL,
+	"order_id" Integer NOT NULL,
+	"quantity" Double precision NOT NULL,
  primary key ("id")
 ) Without Oids;
 
 
 Create table "ads"
 (
-	"id" Bigint NOT NULL,
-	"category_id" Bigint NOT NULL,
+	"id" Serial NOT NULL,
+	"category_id" Integer NOT NULL,
 	"title" Varchar(100) NOT NULL,
-	"cost" Real NOT NULL,
+	"cost" Double precision NOT NULL,
  primary key ("id")
 ) Without Oids;
 
 
 Create table "categories"
 (
-	"id" Bigint NOT NULL,
-	"category_id" Bigint NOT NULL,
+	"id" Serial NOT NULL,
+	"category_id" Integer NOT NULL,
 	"name" Varchar(50) NOT NULL,
 	"description" Text,
  primary key ("id")
@@ -91,8 +91,8 @@ Create table "categories"
 
 Create table "pictures"
 (
-	"id" Bigint NOT NULL,
-	"ad_id" Bigint NOT NULL,
+	"id" Serial NOT NULL,
+	"ad_id" Integer NOT NULL,
 	"name" Varchar(50) NOT NULL,
 	"url" Varchar(150) NOT NULL,
  primary key ("id")

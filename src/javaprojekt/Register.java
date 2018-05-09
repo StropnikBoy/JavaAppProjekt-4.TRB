@@ -361,7 +361,7 @@ Connection Conn = null;
             String surname = jSurnameTextBox.getText();
             String email = jEmailTextBox.getText();
             String tel = jTelTextBox.getText();
-            String kraj_id = "SELECT id FROM residences WHERE post_number LIKE " + x;
+            String kraj_id = "SELECT id FROM residences WHERE post_number = " + Integer.parseInt(x);
             String date = jYearTextBox.getText() + "-" + jMonthTextBox.getText() + "-" + jDayTextBox.getText();
             String password = jPasswordTextBox.getText();
             String confirmation = jConfirmationTextBox.getText();
@@ -391,16 +391,21 @@ Connection Conn = null;
         
         System.out.println(generatedPassword);
         
-        ResultSet rezultati;
+        ResultSet rezultat;
         
         try 
         {
             Statement stavek = Conn.createStatement();
 
-                JOptionPane.showMessageDialog(null, "Uspešna registracija!");
-                String query = "SELECT register ('" + name + "', '" + surname + "', '" + email + "', " + kraj_id + ", '" + tel + "', '" + date + "', '" + password + "', '" + confirmation + "', " + rank + ")";
+                //JOptionPane.showMessageDialog(null, "Uspešna registracija!");
+                String query = "SELECT register ('" + name + "', '" + surname + "', '" + email + "', (" + kraj_id + "), '" + tel + "', '" + date + "', '" + password + "', '" + confirmation + "', " + rank + ")";
+                System.out.println(query);
                 Statement statement = Conn.createStatement();
-                statement.executeQuery(query);
+                rezultat = statement.executeQuery(query);
+                while(rezultat.next()){
+                    int er = rezultat.getInt("register");
+                    System.out.println(er);
+                }
                 this.setVisible(false);
                 Login Prijava = new Login();
                 Prijava.setVisible(true);
