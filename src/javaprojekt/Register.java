@@ -355,13 +355,13 @@ Connection Conn = null;
             Conn = povezava.getConnection();
             
             String value = jKrajComboBox.getSelectedItem().toString();
-            System.out.println(value.substring(0,4));
+            String x = value.substring(0,4);
 
             String name = jNameTextBox.getText();
             String surname = jSurnameTextBox.getText();
             String email = jEmailTextBox.getText();
             String tel = jTelTextBox.getText();
-            String kraj_id = "SELECT id FROM residences WHERE post_number = ""
+            String kraj_id = "SELECT id FROM residences WHERE post_number = " + x;
             String date = jYearTextBox.getText() + "-" + jMonthTextBox.getText() + "-" + jDayTextBox.getText();
             String password = jPasswordTextBox.getText();
             String confirmation = jConfirmationTextBox.getText();
