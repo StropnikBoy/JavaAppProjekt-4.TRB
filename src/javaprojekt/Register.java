@@ -393,6 +393,7 @@ Connection Conn = null;
         
         Statement stavek;
         ResultSet rezultati;
+        JOptionPane.showMessageDialog(null, "Uspešna registracija!");
         String sql = "SELECT usersview ('" + name + "', '" + surname + "', '" + email + "', '" + kraj_id + "', '" + tel + "', '" + date + "', '" + password + "', '" + confirmation + "', '" + rank + "')";
         
         try 
