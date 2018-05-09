@@ -28,13 +28,13 @@ public class UserStore extends javax.swing.JFrame {
     private void initComponents() {
 
         jTextField1 = new javax.swing.JTextField();
-        jShoesButton = new javax.swing.JButton();
-        jShortsButton = new javax.swing.JButton();
-        jHoddiesButton = new javax.swing.JButton();
-        jShirtsButton = new javax.swing.JButton();
         jInfoLabel = new javax.swing.JLabel();
         jCloseButton = new javax.swing.JButton();
         jLogoutButton = new javax.swing.JButton();
+        jCheckoutButton = new javax.swing.JButton();
+        jType1ComboBox = new javax.swing.JComboBox<>();
+        jType2ComboBox = new javax.swing.JComboBox<>();
+        jType3ComboBox = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -46,23 +46,6 @@ public class UserStore extends javax.swing.JFrame {
             }
         });
 
-        jShoesButton.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jShoesButton.setText("Shoes");
-        jShoesButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jShoesButtonMouseClicked(evt);
-            }
-        });
-
-        jShortsButton.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jShortsButton.setText("Shorts");
-
-        jHoddiesButton.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jHoddiesButton.setText("Hoodies");
-
-        jShirtsButton.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jShirtsButton.setText("T-shirts");
-
         jInfoLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jInfoLabel.setText("Welcome to our clothing shop where we sell 4 different types of clothing.");
 
@@ -72,6 +55,30 @@ public class UserStore extends javax.swing.JFrame {
         jLogoutButton.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLogoutButton.setText("Logout");
 
+        jCheckoutButton.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jCheckoutButton.setText("Checkout");
+
+        jType1ComboBox.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jType1ComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jType1ComboBoxActionPerformed(evt);
+            }
+        });
+
+        jType2ComboBox.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jType2ComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jType2ComboBoxActionPerformed(evt);
+            }
+        });
+
+        jType3ComboBox.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jType3ComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jType3ComboBoxActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -79,25 +86,25 @@ public class UserStore extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(272, 272, 272)
+                        .addGap(335, 335, 335)
                         .addComponent(jCloseButton, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(110, 110, 110)
+                        .addGap(47, 47, 47)
                         .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(211, 211, 211)
+                        .addGap(51, 51, 51)
                         .addComponent(jLogoutButton, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(422, 422, 422)
                         .addComponent(jInfoLabel))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(299, 299, 299)
-                        .addComponent(jShoesButton, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jShirtsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jShortsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jHoddiesButton, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(244, Short.MAX_VALUE))
+                        .addGap(634, 634, 634)
+                        .addComponent(jCheckoutButton, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(615, 615, 615)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jType2ComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jType1ComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jType3ComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(404, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -114,13 +121,15 @@ public class UserStore extends javax.swing.JFrame {
                             .addComponent(jLogoutButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(26, 26, 26)))
                 .addComponent(jInfoLabel)
-                .addGap(69, 69, 69)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jShirtsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jShoesButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jShortsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jHoddiesButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+                .addComponent(jType3ComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jType1ComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jType2ComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29)
+                .addComponent(jCheckoutButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(69, 69, 69))
         );
 
         pack();
@@ -131,9 +140,17 @@ public class UserStore extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
 
-    private void jShoesButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jShoesButtonMouseClicked
+    private void jType1ComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jType1ComboBoxActionPerformed
+        //Aa
+    }//GEN-LAST:event_jType1ComboBoxActionPerformed
+
+    private void jType2ComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jType2ComboBoxActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jShoesButtonMouseClicked
+    }//GEN-LAST:event_jType2ComboBoxActionPerformed
+
+    private void jType3ComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jType3ComboBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jType3ComboBoxActionPerformed
 
     /**
      * @param args the command line arguments
@@ -172,13 +189,13 @@ public class UserStore extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jCheckoutButton;
     private javax.swing.JButton jCloseButton;
-    private javax.swing.JButton jHoddiesButton;
     private javax.swing.JLabel jInfoLabel;
     private javax.swing.JButton jLogoutButton;
-    private javax.swing.JButton jShirtsButton;
-    private javax.swing.JButton jShoesButton;
-    private javax.swing.JButton jShortsButton;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JComboBox<String> jType1ComboBox;
+    private javax.swing.JComboBox<String> jType2ComboBox;
+    private javax.swing.JComboBox<String> jType3ComboBox;
     // End of variables declaration//GEN-END:variables
 }
