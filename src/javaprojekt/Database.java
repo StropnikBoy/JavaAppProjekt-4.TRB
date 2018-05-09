@@ -11,16 +11,14 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-/**
- *
- * @author theph
- */
+
 public class Database {
-    private static String url = "jdbc:postgresql://localhost:5432/java";    
+    private static String url = "jdbc:postgresql://horton.elephantsql.com:5432/gtqozqor";    
     private static String driverName = "org.postgresql.Driver";   
-    private static String username = "postgres";   
-    private static String password = "";
+    private static String username = "gtqozqor";   
+    private static String password = "dsB-EHsYK-Kv13r33nXKjX3eVR6XcJpg";
     private static Connection conn;
+    
     
     public static Connection getConnection() {
         try {
