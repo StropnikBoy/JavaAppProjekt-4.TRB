@@ -342,7 +342,7 @@ Connection Conn = null;
         if ( jNameTextBox.getText().trim().length() == 0
             || jSurnameTextBox.getText().trim().length() == 0
             || jEmailTextBox.getText().trim().length() == 0
-            || jTelTextBox.getText().trim().length() == 0)
+            || jTelTextBox.getText().trim().length() == 0 && jPasswordTextBox.GetText() == jConfirmationTextBox.GetText())
         {
             JOptionPane.showMessageDialog(null,"Izpolni podatke pravilno.");
         }
