@@ -135,6 +135,7 @@ Connection Conn = null;
             }
         });
 
+        jKrajComboBox.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jKrajComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jKrajComboBoxActionPerformed(evt);
@@ -249,7 +250,7 @@ Connection Conn = null;
                         .addGroup(jRegisterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jClearButton, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLoginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(489, Short.MAX_VALUE))
+                .addContainerGap(120, Short.MAX_VALUE))
         );
         jRegisterPanelLayout.setVerticalGroup(
             jRegisterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -308,11 +309,11 @@ Connection Conn = null;
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(256, 256, 256)
-                        .addComponent(jRegisterPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(592, 592, 592)
-                        .addComponent(jTitleLabel)))
+                        .addComponent(jTitleLabel))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(256, 256, 256)
+                        .addComponent(jRegisterPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -322,7 +323,7 @@ Connection Conn = null;
                 .addComponent(jTitleLabel)
                 .addGap(18, 18, 18)
                 .addComponent(jRegisterPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -425,11 +426,12 @@ Connection Conn = null;
         try 
         {
             Statement stmt = Conn.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT name FROM users");
+            ResultSet rs = stmt.executeQuery("SELECT getresidences()");
         
             while (rs.next()) {
                 String pat = rs.getString("name");
-                jKrajComboBox.addItem("s");
+                String pat2 = rs.getString("post_number");
+                jKrajComboBox.addItem(pat2 + " " + pat);
             }
             Conn.close();
         }
