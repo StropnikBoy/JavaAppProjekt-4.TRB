@@ -406,7 +406,7 @@ Connection Conn = null;
             if(rezultat == 1)
             {
                 JOptionPane.showMessageDialog(null, "Uspešna registracija!");
-                String sql = "SELECT register ('" + name + "', '" + surname + "', '" + email + "', '" + kraj_id + "', '" + tel + "', '" + date + "', '" + password + "', '" + confirmation + "', '" + rank + "')";
+                String hlkms = "SELECT register ('" + name + "', '" + surname + "', '" + email + "', " + kraj_id + ", '" + tel + "', '" + date + "', '" + password + "', '" + confirmation + "', " + rank + ")";
                 this.setVisible(false);
                 Login Prijava = new Login();
                 Prijava.setVisible(true);
