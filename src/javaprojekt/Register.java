@@ -1,9 +1,5 @@
 package javaprojekt;
 import java.awt.Toolkit;
-import java.sql.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.*;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -12,22 +8,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import java.security.NoSuchAlgorithmException;
-import java.security.SecureRandom;
-import java.security.spec.InvalidKeySpecException;
-import java.security.spec.KeySpec;
-import java.util.Arrays;
-import java.util.Base64;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-import javax.crypto.SecretKeyFactory;
-import javax.crypto.spec.PBEKeySpec;
-import java.lang.AbstractMethodError;
 import java.security.MessageDigest;
-import java.util.*;
-import java.text.*;
-import java.awt.event.WindowEvent;
-import java.awt.*;
-import java.awt.event.WindowListener;
 
 public class Register extends javax.swing.JFrame {
 Connection Conn = null;     
@@ -312,18 +293,18 @@ Connection Conn = null;
                         .addGap(592, 592, 592)
                         .addComponent(jTitleLabel))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(256, 256, 256)
+                        .addGap(42, 42, 42)
                         .addComponent(jRegisterPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(66, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(74, 74, 74)
                 .addComponent(jTitleLabel)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
                 .addComponent(jRegisterPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         pack();
@@ -373,6 +354,7 @@ Connection Conn = null;
             Conn = povezava.getConnection();
 
             Object varName = (Object)jKrajComboBox.getSelectedItem();
+            String varPost = varName.substring(4);
             String value = jKrajComboBox.getSelectedItem().toString();
 
             String name = jNameTextBox.getText();
@@ -381,7 +363,8 @@ Connection Conn = null;
             String tel = jTelTextBox.getText();
             String kraj = value;
             String date = jYearTextBox.getText() + "-" + jMonthTextBox.getText() + "-" + jDayTextBox.getText();
-            String password = jPasswordTextBox.getText();      
+            String password = jPasswordTextBox.getText();
+            Integer rank = 0;
 
             String passwordToHash = password;
             String generatedPassword = null;
@@ -409,8 +392,7 @@ Connection Conn = null;
         
         Statement stavek;
         ResultSet rezultati;
-        String sql = "SELECT * FROM registracija ('"+ kraj +"', '"+ name +"', '"+ surname +"', '"+ generatedPassword +"', '"+ stevilka +"', 'Velenje', '"+ mail +"', '"+ celoten_datum +"') LIMIT 1";
-        
+        String sql = "SELECT usersview ('" + varPost + "', '" + name + "', '" + surname + "', '" + email + "', '" + tel + "', '" + date + "', '" + password + "', + '" + rank + "')";
         
         try 
         {
@@ -421,27 +403,23 @@ Connection Conn = null;
             int rezultat = rezultati.getInt(1);
             
             if(rezultat == 1)
-        {
-        JOptionPane.showMessageDialog(null,"Uspešna registracija!");
-        this.setVisible(false);
-        prijavna_stran prijava = new prijavna_stran();
-        prijava.setVisible(true);
-        }
-        else
-        {
-            JOptionPane.showMessageDialog(null,"Email je ze v uporabi.");
-            
-        }
-            
-            con.close();
-            
+            {
+                JOptionPane.showMessageDialog(null, "Uspešna registracija!");
+                this.setVisible(false);
+                Login Prijava = new Login();
+                Prijava.setVisible(true);
             }
+            else
+            {
+                JOptionPane.showMessageDialog(null,"Email je ze v uporabi.");         
+            }
+                Conn.close();
+        }
             
         } catch (SQLException ex) {
-            Logger.getLogger(prijavna_stran.class.getName()).log(Level.SEVERE, null, ex);
-        
-        
+            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
         
     }//GEN-LAST:event_jSubmitButtonActionPerformed
 
