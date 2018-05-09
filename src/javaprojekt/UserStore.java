@@ -28,16 +28,13 @@ public class UserStore extends javax.swing.JFrame {
     private void initComponents() {
 
         jTextField1 = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        jShoesButton = new javax.swing.JButton();
+        jShortsButton = new javax.swing.JButton();
+        jHoddiesButton = new javax.swing.JButton();
+        jShirtsButton = new javax.swing.JButton();
+        jInfoLabel = new javax.swing.JLabel();
+        jCloseButton = new javax.swing.JButton();
+        jLogoutButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -49,38 +46,31 @@ public class UserStore extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jButton2.setText("Shoes");
-        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+        jShoesButton.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jShoesButton.setText("Shoes");
+        jShoesButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton2MouseClicked(evt);
+                jShoesButtonMouseClicked(evt);
             }
         });
 
-        jButton5.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jButton5.setText("Shorts");
+        jShortsButton.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jShortsButton.setText("Shorts");
 
-        jButton6.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jButton6.setText("Hoodies");
+        jHoddiesButton.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jHoddiesButton.setText("Hoodies");
 
-        jButton7.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jButton7.setText("T-shirts");
+        jShirtsButton.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jShirtsButton.setText("T-shirts");
 
-        jButton8.setText("Register");
+        jInfoLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jInfoLabel.setText("Welcome to our clothing shop where we sell 4 different types of clothing.");
 
-        jButton9.setText("Login");
+        jCloseButton.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jCloseButton.setText("Close");
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel2.setText("Slika");
-
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel3.setText("Slika");
-
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel4.setText("Slika");
-
-        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel5.setText("Slika");
+        jLogoutButton.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLogoutButton.setText("Logout");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -89,58 +79,48 @@ public class UserStore extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(283, 283, 283)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(353, 353, 353)
-                        .addComponent(jLabel2)
-                        .addGap(190, 190, 190)
-                        .addComponent(jLabel5)
-                        .addGap(200, 200, 200)
-                        .addComponent(jLabel4)
-                        .addGap(204, 204, 204)
-                        .addComponent(jLabel3))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(582, 582, 582)
+                        .addGap(272, 272, 272)
+                        .addComponent(jCloseButton, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(110, 110, 110)
                         .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(148, 148, 148)
-                        .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(211, 211, 211)
+                        .addComponent(jLogoutButton, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(422, 422, 422)
+                        .addComponent(jInfoLabel))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(299, 299, 299)
+                        .addComponent(jShoesButton, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton8)))
-                .addContainerGap(331, Short.MAX_VALUE))
+                        .addComponent(jShirtsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jShortsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jHoddiesButton, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(244, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(70, 70, 70)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton9)
-                            .addComponent(jButton8))
-                        .addGap(43, 43, 43))
+                        .addGap(58, 58, 58)
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(54, 54, 54))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jCloseButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLogoutButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(26, 26, 26)))
+                .addComponent(jInfoLabel)
+                .addGap(69, 69, 69)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(79, 79, 79)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel3))
-                .addGap(706, 706, 706))
+                    .addComponent(jShirtsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jShoesButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jShortsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jHoddiesButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
 
         pack();
@@ -151,9 +131,9 @@ public class UserStore extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
 
-    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+    private void jShoesButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jShoesButtonMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2MouseClicked
+    }//GEN-LAST:event_jShoesButtonMouseClicked
 
     /**
      * @param args the command line arguments
@@ -192,16 +172,13 @@ public class UserStore extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
+    private javax.swing.JButton jCloseButton;
+    private javax.swing.JButton jHoddiesButton;
+    private javax.swing.JLabel jInfoLabel;
+    private javax.swing.JButton jLogoutButton;
+    private javax.swing.JButton jShirtsButton;
+    private javax.swing.JButton jShoesButton;
+    private javax.swing.JButton jShortsButton;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }
