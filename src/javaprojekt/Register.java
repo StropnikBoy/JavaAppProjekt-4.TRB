@@ -1,4 +1,5 @@
 package javaprojekt;
+import com.sun.xml.internal.ws.util.StringUtils;
 import java.awt.Toolkit;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -9,6 +10,7 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import java.security.NoSuchAlgorithmException;
 import java.security.MessageDigest;
+import java.lang.Object;
 
 public class Register extends javax.swing.JFrame {
 Connection Conn = null;     
@@ -295,7 +297,7 @@ Connection Conn = null;
                     .addGroup(layout.createSequentialGroup()
                         .addGap(42, 42, 42)
                         .addComponent(jRegisterPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(66, Short.MAX_VALUE))
+                .addContainerGap(162, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -347,14 +349,16 @@ Connection Conn = null;
             JOptionPane.showMessageDialog(null,"Izpolni podatke pravilno.");
         }
 
-        else
         {
             Connection Conn;
             Database povezava = new Database();
             Conn = povezava.getConnection();
 
             Object varName = (Object)jKrajComboBox.getSelectedItem();
-            String varPost = varName.substring(4);
+            String varPost = varName.Convert.ToString;
+            
+
+            String x = "HAah";   System.out.println(x.substring(0,4));
             String value = jKrajComboBox.getSelectedItem().toString();
 
             String name = jNameTextBox.getText();
@@ -434,8 +438,9 @@ Connection Conn = null;
     }//GEN-LAST:event_jNameTextBoxMouseClicked
 
     private void jLoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jLoginButtonActionPerformed
-        new Register().setVisible(false);
-        new Login().setVisible(true);
+        this.setVisible(false);
+        Login Prijava = new Login();
+        Prijava.setVisible(true);
     }//GEN-LAST:event_jLoginButtonActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
