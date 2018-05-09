@@ -368,7 +368,6 @@ Connection Conn = null;
 
         else
         {
-            //izpis krajev v combobox
             Connection Conn;
             Database povezava = new Database();
             Conn = povezava.getConnection();
@@ -381,9 +380,69 @@ Connection Conn = null;
             String email = jEmailTextBox.getText();
             String tel = jTelTextBox.getText();
             String kraj = value;
-            //String date = jYearTextBox.getText() + "-" + jMonthTextBox.getText() + "-" + jDayTextBox.getText();
-            String password = jPasswordTextBox.getText();
+            String date = jYearTextBox.getText() + "-" + jMonthTextBox.getText() + "-" + jDayTextBox.getText();
+            String password = jPasswordTextBox.getText();      
+
+            String passwordToHash = password;
+            String generatedPassword = null;
+            
+            try {
+                MessageDigest md = MessageDigest.getInstance("MD5");
+                md.update(passwordToHash.getBytes());
+                byte[] bytes = md.digest();
+
+                StringBuilder sb = new StringBuilder();
+                for(int i=0; i< bytes.length ;i++)
+                {
+                    sb.append(Integer.toString((bytes[i] & 0xff) + 0x100, 16).substring(1));
+                }
+                //Get complete hashed password in hex format
+                generatedPassword = sb.toString();
+            }
+        
+        catch (NoSuchAlgorithmException e)
+        {
+            e.printStackTrace();
         }
+        
+        System.out.println(generatedPassword);
+        
+        Statement stavek;
+        ResultSet rezultati;
+        String sql = "SELECT * FROM registracija ('"+ kraj +"', '"+ name +"', '"+ surname +"', '"+ generatedPassword +"', '"+ stevilka +"', 'Velenje', '"+ mail +"', '"+ celoten_datum +"') LIMIT 1";
+        
+        
+        try 
+        {
+            stavek = Conn.createStatement();
+            rezultati = stavek.executeQuery(sql);
+            
+            while (rezultati.next()) {
+            int rezultat = rezultati.getInt(1);
+            
+            if(rezultat == 1)
+        {
+        JOptionPane.showMessageDialog(null,"Uspešna registracija!");
+        this.setVisible(false);
+        prijavna_stran prijava = new prijavna_stran();
+        prijava.setVisible(true);
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(null,"Email je ze v uporabi.");
+            
+        }
+            
+            con.close();
+            
+            }
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(prijavna_stran.class.getName()).log(Level.SEVERE, null, ex);
+        
+        
+        }
+        
     }//GEN-LAST:event_jSubmitButtonActionPerformed
 
     private void jEmailTextBoxMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jEmailTextBoxMouseClicked
@@ -397,25 +456,6 @@ Connection Conn = null;
     private void jLoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jLoginButtonActionPerformed
         new Register().setVisible(false);
         new Login().setVisible(true);
-        
-          Connection Conn;
-        Database povezava = new Database();
-        Conn = povezava.getConnection();
-        
-        try 
-        {
-            Statement stmt = Conn.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT name FROM users");
-        
-            while (rs.next()) {
-                String pat = rs.getString("name");
-                jKrajComboBox.addItem("s");
-            }
-            Conn.close();
-        }
-        catch (SQLException ex) {
-            Logger.getLogger(Register.class.getName()).log(Level.SEVERE, null, ex);
-        }  
     }//GEN-LAST:event_jLoginButtonActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
@@ -426,7 +466,7 @@ Connection Conn = null;
         try 
         {
             Statement stmt = Conn.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT getresidences()");
+            ResultSet rs = stmt.executeQuery("SELECT * FROM residences"); //FIX
         
             while (rs.next()) {
                 String pat = rs.getString("name");

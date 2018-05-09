@@ -88,7 +88,6 @@ Connection Conn = null;
         jCloseButton.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jCloseButton.setText("Close");
         jCloseButton.setToolTipText("");
-        jCloseButton.setActionCommand("Close");
         jCloseButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jCloseButtonActionPerformed(evt);
