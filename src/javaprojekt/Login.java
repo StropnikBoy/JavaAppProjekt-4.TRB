@@ -208,6 +208,21 @@ Connection Conn = null;
             Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
         }
         
+        String users = "SELECT * FROM getusers();";
+        try {
+            stavek = Conn.createStatement();
+            rezultati = stavek.executeQuery(users);
+            
+            while (rezultati.next()) {
+            String name = rezultati.getString("uname");
+            String surname = rezultati.getString("surname");
+            Global.name = name;
+            Global.surname = surname;
+            }
+        }catch (SQLException ex) {
+            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
         switch(Global.rank){
             case 0:
                 this.setVisible(false);
@@ -217,7 +232,7 @@ Connection Conn = null;
                 
             case 1:
                 this.setVisible(false);
-                AdminUi admi = new AdminUi();
+                AdminHomePage admi = new AdminHomePage();
                 admi.setVisible(true);
                 break;
                 
