@@ -3,25 +3,22 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< HEAD
-            <file>file:/C:/Users/theph/OneDrive/Dokumenti/NetBeansProjects/JavaProjekt/src/javaprojekt/AddItems.java</file>
+            <file>file:/C:/Users/theph/OneDrive/Dokumenti/NetBeansProjects/JavaProjekt/src/javaprojekt/UserForms/UserHomePage.java</file>
+            <file>file:/C:/Users/theph/OneDrive/Dokumenti/NetBeansProjects/JavaProjekt/src/javaprojekt/UserForms/UserStore.java</file>
+            <file>file:/C:/Users/theph/OneDrive/Dokumenti/NetBeansProjects/JavaProjekt/src/javaprojekt/UserForms/EditUserInfo.java</file>
             <file>file:/C:/Users/theph/OneDrive/Dokumenti/NetBeansProjects/JavaProjekt/src/RegisterUsers.java</file>
             <file>file:/C:/Users/theph/OneDrive/Dokumenti/NetBeansProjects/JavaProjekt/src/javaprojekt/HomePage.java</file>
             <file>file:/C:/Users/theph/OneDrive/Dokumenti/NetBeansProjects/JavaProjekt/src/javaprojekt/Login.java</file>
+            <file>file:/C:/Users/theph/OneDrive/Dokumenti/NetBeansProjects/JavaProjekt/src/javaprojekt/AdminForms/ConfirmOrders.java</file>
             <file>file:/C:/Users/theph/OneDrive/Dokumenti/NetBeansProjects/JavaProjekt/src/javaprojekt/Register.java</file>
-            <file>file:/C:/Users/theph/OneDrive/Dokumenti/NetBeansProjects/JavaProjekt/src/javaprojekt/UserStore.java</file>
-            <file>file:/C:/Users/theph/OneDrive/Dokumenti/NetBeansProjects/JavaProjekt/src/javaprojekt/Checkout.java</file>
-            <file>file:/C:/Users/theph/OneDrive/Dokumenti/NetBeansProjects/JavaProjekt/src/javaprojekt/AdminHomePage.java</file>
-            <file>file:/C:/Users/theph/OneDrive/Dokumenti/NetBeansProjects/JavaProjekt/src/javaprojekt/AdminUi.java</file>
+            <file>file:/C:/Users/theph/OneDrive/Dokumenti/NetBeansProjects/JavaProjekt/src/javaprojekt/UserForms/OrdersToConfirm.java</file>
+            <file>file:/C:/Users/theph/OneDrive/Dokumenti/NetBeansProjects/JavaProjekt/src/javaprojekt/AdminForms/AdminItems.java</file>
+            <file>file:/C:/Users/theph/OneDrive/Dokumenti/NetBeansProjects/JavaProjekt/src/javaprojekt/AdminForms/EditAdminInfo.java</file>
+            <file>file:/C:/Users/theph/OneDrive/Dokumenti/NetBeansProjects/JavaProjekt/src/javaprojekt/AdminForms/AdminHomePage.java</file>
             <file>file:/C:/Users/theph/OneDrive/Dokumenti/NetBeansProjects/JavaProjekt/src/javaprojekt/JavaProjekt.java</file>
-            <file>file:/C:/Users/theph/OneDrive/Dokumenti/NetBeansProjects/JavaProjekt/src/javaprojekt/ProductSite.java</file>
             <file>file:/C:/Users/theph/OneDrive/Dokumenti/NetBeansProjects/JavaProjekt/src/javaprojekt/Database.java</file>
+            <file>file:/C:/Users/theph/OneDrive/Dokumenti/NetBeansProjects/JavaProjekt/src/javaprojekt/UserForms/Checkout.java</file>
             <file>file:/C:/Users/theph/OneDrive/Dokumenti/NetBeansProjects/JavaProjekt/src/javaprojekt/Global.java</file>
-=======
-            <file>file:/C:/Users/david/Desktop/JavaAppProjekt-4.TRB/src/javaprojekt/Login.java</file>
-            <file>file:/C:/Users/david/Desktop/JavaAppProjekt-4.TRB/src/javaprojekt/Global.java</file>
-            <file>file:/C:/Users/david/Desktop/JavaAppProjekt-4.TRB/src/javaprojekt/AddItems.java</file>
->>>>>>> 6458cf03bedf509cd1cdce1fee3a98ac86b4d62b
         </group>
     </open-files>
 </project-private>

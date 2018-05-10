@@ -46,6 +46,11 @@ public class UserStore extends javax.swing.JFrame {
         jNameLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
 
         jTextField1.setFont(new java.awt.Font("Times New Roman", 1, 48)); // NOI18N
         jTextField1.setText("Online Store");
@@ -206,19 +211,13 @@ public class UserStore extends javax.swing.JFrame {
         //Aa
     }//GEN-LAST:event_jType1ComboBoxActionPerformed
 
-    private void jType2ComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jType2ComboBoxActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jType2ComboBoxActionPerformed
-
-    private void jType3ComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jType3ComboBoxActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jType3ComboBoxActionPerformed
-
     private void jCloseButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCloseButtonActionPerformed
         System.exit(0);
     }//GEN-LAST:event_jCloseButtonActionPerformed
 
     private void jCheckoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckoutButtonActionPerformed
+
+        
         this.setVisible(false);
         Checkout Checkingout = new Checkout();
         Checkingout.setVisible(true);
@@ -229,6 +228,18 @@ public class UserStore extends javax.swing.JFrame {
         HomePage Home = new HomePage();
         Home.setVisible(true);
     }//GEN-LAST:event_jLogoutButtonActionPerformed
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        
+    }//GEN-LAST:event_formWindowOpened
+
+    private void jType2ComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jType2ComboBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jType2ComboBoxActionPerformed
+
+    private void jType3ComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jType3ComboBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jType3ComboBoxActionPerformed
 
     /**
      * @param args the command line arguments
