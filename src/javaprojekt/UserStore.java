@@ -13,7 +13,6 @@ import java.security.MessageDigest;
 import java.lang.Object;
 import javaprojekt.HomePage;
 
-
 public class UserStore extends javax.swing.JFrame {
 
     public UserStore() {
