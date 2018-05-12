@@ -1,5 +1,4 @@
 package javaprojekt;
-import com.sun.xml.internal.ws.util.StringUtils;
 import java.awt.Toolkit;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -10,7 +9,7 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import java.security.NoSuchAlgorithmException;
 import java.security.MessageDigest;
-import java.lang.Object;
+import javax.swing.JDialog;
 
 public class Register extends javax.swing.JFrame {
 Connection Conn = null;     
@@ -99,11 +98,6 @@ Connection Conn = null;
         jTelTextBox.setText("Vnesi telefonsko...");
 
         jKrajComboBox.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jKrajComboBox.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jKrajComboBoxActionPerformed(evt);
-            }
-        });
 
         jKrajLabel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jKrajLabel.setText("Kraj bivanja:");
@@ -271,10 +265,6 @@ Connection Conn = null;
         System.exit(0);
     }//GEN-LAST:event_jCloseButtonActionPerformed
 
-    private void jKrajComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jKrajComboBoxActionPerformed
-      //Aa
-    }//GEN-LAST:event_jKrajComboBoxActionPerformed
-
     private void jSubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSubmitButtonActionPerformed
         if ( jNameTextBox.getText().trim().length() == 0
             || jSurnameTextBox.getText().trim().length() == 0
@@ -305,6 +295,9 @@ Connection Conn = null;
             String passwordToHash = password;
             String generatedPassword = null;
             
+            String confirmationToHash = confirmation;
+            String generatedConfirm = null;
+            
             try {
                 MessageDigest md = MessageDigest.getInstance("MD5");
                 md.update(passwordToHash.getBytes());
@@ -315,8 +308,25 @@ Connection Conn = null;
                 {
                     sb.append(Integer.toString((bytes[i] & 0xff) + 0x100, 16).substring(1));
                 }
-                //Get complete hashed password in hex format
                 generatedPassword = sb.toString();
+            }
+        
+        catch (NoSuchAlgorithmException e)
+        {
+            e.printStackTrace();
+        }
+            try {
+                MessageDigest md = MessageDigest.getInstance("MD5");
+                md.update(confirmationToHash.getBytes());
+                byte[] bytes = md.digest();
+
+                StringBuilder sb = new StringBuilder();
+                for(int i=0; i< bytes.length ;i++)
+                {
+                    sb.append(Integer.toString((bytes[i] & 0xff) + 0x100, 16).substring(1));
+                }
+                //Get complete hashed password in hex format
+                generatedConfirm = sb.toString();
             }
         
         catch (NoSuchAlgorithmException e)
@@ -333,9 +343,7 @@ Connection Conn = null;
         try 
         {
             Statement stavek = Conn.createStatement();
-
-                //JOptionPane.showMessageDialog(null, "Uspešna registracija!");
-                String query = "SELECT register ('" + name + "', '" + surname + "', '" + email + "', (" + kraj_id + "), '" + tel + "', '" + date + "', '" + password + "', '" + confirmation + "', " + rank + ")";
+                String query = "SELECT register ('" + name + "', '" + surname + "', '" + email + "', (" + kraj_id + "), '" + tel + "', '" + date + "', '" + generatedPassword + "', '" + generatedConfirm + "', " + rank + ")";
                 System.out.println(query);
                 Statement statement = Conn.createStatement();
                 rezultat = statement.executeQuery(query);
@@ -343,10 +351,13 @@ Connection Conn = null;
                     int er = rezultat.getInt("register");
                     System.out.println(er);
                 }
+                final JDialog dialog = new JDialog();
+                dialog.setAlwaysOnTop(true);
+                JOptionPane.showMessageDialog(dialog, "Uspešno ste se registrirali");
                 this.setVisible(false);
                 Login Prijava = new Login();
                 Prijava.setVisible(true);
-
+                
                 Conn.close();
         
         } catch (SQLException ex) {
