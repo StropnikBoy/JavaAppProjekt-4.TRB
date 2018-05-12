@@ -43,12 +43,8 @@ Connection Conn = null;
 
         jEmailTextBox.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jEmailTextBox.setText("Vnesi email...");
-        jEmailTextBox.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jEmailTextBoxMouseClicked(evt);
-            }
-        });
 
+        jPasswordTextBox.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jPasswordTextBox.setToolTipText("Vnesi geslo...");
 
         jEmailLabel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -91,34 +87,36 @@ Connection Conn = null;
         jRegisterPanelLayout.setHorizontalGroup(
             jRegisterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jRegisterPanelLayout.createSequentialGroup()
+                .addGap(22, 22, 22)
                 .addGroup(jRegisterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jRegisterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(jRegisterPanelLayout.createSequentialGroup()
-                            .addContainerGap()
-                            .addComponent(jLoginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(18, 18, 18)
-                            .addComponent(jRegisterButton, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(72, 72, 72))
-                        .addGroup(jRegisterPanelLayout.createSequentialGroup()
-                            .addGroup(jRegisterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(jRegisterPanelLayout.createSequentialGroup()
-                                    .addGap(30, 30, 30)
-                                    .addComponent(jEmailLabel)
-                                    .addGap(65, 65, 65))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jRegisterPanelLayout.createSequentialGroup()
-                                    .addContainerGap()
-                                    .addComponent(jPasswordLabel)
-                                    .addGap(18, 18, 18)))
-                            .addGroup(jRegisterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jPasswordTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jEmailTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jRegisterPanelLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jTitleLabel))
+                        .addGap(42, 42, 42)
+                        .addComponent(jTitleLabel)
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jRegisterPanelLayout.createSequentialGroup()
-                        .addGap(177, 177, 177)
-                        .addComponent(jCloseButton, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(jRegisterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jRegisterPanelLayout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(jLoginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jRegisterButton, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(85, 85, 85))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jRegisterPanelLayout.createSequentialGroup()
+                                .addGroup(jRegisterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(jRegisterPanelLayout.createSequentialGroup()
+                                        .addComponent(jEmailLabel)
+                                        .addGap(86, 86, 86)
+                                        .addComponent(jEmailTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jRegisterPanelLayout.createSequentialGroup()
+                                        .addComponent(jPasswordLabel)
+                                        .addGap(41, 41, 41)
+                                        .addComponent(jPasswordTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(0, 26, Short.MAX_VALUE)))
+                        .addContainerGap())))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jRegisterPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jCloseButton, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(204, 204, 204))
         );
         jRegisterPanelLayout.setVerticalGroup(
             jRegisterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -130,7 +128,7 @@ Connection Conn = null;
                     .addComponent(jEmailLabel)
                     .addComponent(jEmailTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jRegisterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jRegisterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPasswordLabel)
                     .addComponent(jPasswordTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
@@ -139,7 +137,7 @@ Connection Conn = null;
                     .addComponent(jRegisterButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jCloseButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -159,94 +157,117 @@ Connection Conn = null;
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        setBounds(0, 0, 613, 378);
+        setBounds(0, 0, 640, 378);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jEmailTextBoxMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jEmailTextBoxMouseClicked
-        jEmailTextBox.setText(null);
-    }//GEN-LAST:event_jEmailTextBoxMouseClicked
-
     private void jLoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jLoginButtonActionPerformed
-        
-        String email = jEmailTextBox.getText();
-        String password = jPasswordTextBox.getText();
-        
-        String passwordToHash = password;
-        String generatedPassword = null;
-        
-        try {
-            MessageDigest md = MessageDigest.getInstance("MD5");
-            md.update(passwordToHash.getBytes());
-            byte[] bytes = md.digest();
-            StringBuilder sb = new StringBuilder();
-            for(int i=0; i< bytes.length ;i++)
-            {
-                sb.append(Integer.toString((bytes[i] & 0xff) + 0x100, 16).substring(1));
-            }
-            generatedPassword = sb.toString();
-        }
-        catch (NoSuchAlgorithmException e)
+        if ( jEmailTextBox.getText().trim().length() == 0
+            || jPasswordTextBox.getText().trim().length() == 0)
         {
-            e.printStackTrace();
+            final JDialog dialog = new JDialog();
+            dialog.setAlwaysOnTop(true);
+            JOptionPane.showMessageDialog(dialog, "Izpolni podatke pravilno.");
         }
         
-        Connection Conn;
-        Statement stavek;
-        ResultSet rezultati;
-        String sql = "SELECT login('"+email+"', '"+password+"');";
-        
-        Database povezava = new Database();
-        Conn = povezava.getConnection();
-        
-        try {
-            stavek = Conn.createStatement();
-            rezultati = stavek.executeQuery(sql);
-            
-            while (rezultati.next()) {
-            int rezultat = rezultati.getInt("login");
-            Global.rank = rezultat;
+        {
+            Connection Conn;
+            Database povezava = new Database();
+            Conn = povezava.getConnection();
+
+            String email = jEmailTextBox.getText();
+            String password = jPasswordTextBox.getText();
+
+            String passwordToHash = password;
+            String generatedPassword = null;
+
+            try 
+            {
+                MessageDigest md = MessageDigest.getInstance("MD5");
+                md.update(passwordToHash.getBytes());
+                byte[] bytes = md.digest();
+                StringBuilder sb = new StringBuilder();
+                for(int i=0; i< bytes.length ;i++)
+                {
+                    sb.append(Integer.toString((bytes[i] & 0xff) + 0x100, 16).substring(1));
+                }
+                generatedPassword = sb.toString();
             }
-        }catch (SQLException ex) {
-            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-        String users = "SELECT * FROM getusers();";
-        try {
-            stavek = Conn.createStatement();
-            rezultati = stavek.executeQuery(users);
-            
-            while (rezultati.next()) {
-            String name = rezultati.getString("uname");
-            String surname = rezultati.getString("surname");
-            Global.name = name;
-            Global.surname = surname;
+            catch (NoSuchAlgorithmException e)
+            {
+                e.printStackTrace();
             }
-        }catch (SQLException ex) {
-            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-        switch(Global.rank){
-            case 0:
-                this.setVisible(false);
-                UserStore novo = new UserStore();
-                novo.setVisible(true);
-                break;
-                
-            case 1:
-                this.setVisible(false);
-                AdminHomePage admi = new AdminHomePage();
-                admi.setVisible(true);
-                break;
-                
-            default:
-                JOptionPane.showMessageDialog(null,"Napačno geslo ali uporabniško ime!");
-                break;
-        }
-        
-        try{
-        Conn.close();
-        }catch(SQLException ex){
-            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+
+            Statement stavek;
+            ResultSet rezultati;
+            String sql = "SELECT login('"+ email +"', '"+ generatedPassword +"');";
+
+            try 
+            {
+                stavek = Conn.createStatement();
+                rezultati = stavek.executeQuery(sql);
+
+                while (rezultati.next()) {
+                int rezultat = rezultati.getInt("login");
+                Global.rank = rezultat;
+                }
+            }
+
+            catch (SQLException ex) {
+                Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+            String users = "SELECT * FROM getusers();";
+            
+            try 
+            {
+                stavek = Conn.createStatement();
+                rezultati = stavek.executeQuery(users);
+
+                while (rezultati.next()) {
+                String name = rezultati.getString("uname");
+                String surname = rezultati.getString("surname");
+                Global.name = name;
+                Global.surname = surname;
+                }
+            }
+            
+            catch (SQLException ex) 
+            {
+                Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+            final JDialog dialog = new JDialog();
+            dialog.setAlwaysOnTop(true);
+
+            switch(Global.rank){
+                case 0:
+                    JOptionPane.showMessageDialog(dialog, "Uspešno ste se prijavli kot user!");
+                    this.setVisible(false);
+                    UserStore novo = new UserStore();
+                    novo.setVisible(true);
+                    break;
+
+                case 1:
+                    JOptionPane.showMessageDialog(dialog, "Uspešno ste se prijavli kot admin!");
+                    this.setVisible(false);
+                    AdminHomePage admi = new AdminHomePage();
+                    admi.setVisible(true);
+                    break;
+
+                default:
+                    JOptionPane.showMessageDialog(dialog, "Napačno geslo ali uporabniško ime!");
+                    break;
+            }
+
+            try
+            {
+                Conn.close();
+            }
+            
+            catch(SQLException ex)
+            {
+                Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }//GEN-LAST:event_jLoginButtonActionPerformed
 

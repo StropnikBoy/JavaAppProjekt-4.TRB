@@ -269,9 +269,13 @@ Connection Conn = null;
         if ( jNameTextBox.getText().trim().length() == 0
             || jSurnameTextBox.getText().trim().length() == 0
             || jEmailTextBox.getText().trim().length() == 0
-            || jTelTextBox.getText().trim().length() == 0)
+            || jTelTextBox.getText().trim().length() == 0
+            || jPasswordTextBox.getText().trim().length() == 0
+            || jConfirmationTextBox.getText().trim().length() == 0)
         {
-            JOptionPane.showMessageDialog(null,"Izpolni podatke pravilno.");
+            final JDialog dialog = new JDialog();
+            dialog.setAlwaysOnTop(true);
+            JOptionPane.showMessageDialog(dialog, "Izpolni podatke pravilno.");
         }
 
         {
@@ -294,11 +298,9 @@ Connection Conn = null;
 
             String passwordToHash = password;
             String generatedPassword = null;
-            
-            String confirmationToHash = confirmation;
-            String generatedConfirm = null;
-            
-            try {
+                        
+            try 
+            {
                 MessageDigest md = MessageDigest.getInstance("MD5");
                 md.update(passwordToHash.getBytes());
                 byte[] bytes = md.digest();
@@ -311,11 +313,16 @@ Connection Conn = null;
                 generatedPassword = sb.toString();
             }
         
-        catch (NoSuchAlgorithmException e)
-        {
-            e.printStackTrace();
-        }
-            try {
+            catch (NoSuchAlgorithmException e)
+            {
+                e.printStackTrace();
+            }
+            
+            String confirmationToHash = confirmation;
+            String generatedConfirm = null;
+            
+            try 
+            {
                 MessageDigest md = MessageDigest.getInstance("MD5");
                 md.update(confirmationToHash.getBytes());
                 byte[] bytes = md.digest();
@@ -329,12 +336,13 @@ Connection Conn = null;
                 generatedConfirm = sb.toString();
             }
         
-        catch (NoSuchAlgorithmException e)
-        {
-            e.printStackTrace();
-        }
+            catch (NoSuchAlgorithmException e)
+            {
+                e.printStackTrace();
+            }
         
         System.out.println(generatedPassword);
+        System.out.println(generatedConfirm);
         
         ResultSet rezultati;
         String sql = "SELECT usersview ('" + name + "', '" + surname + "', '" + email + "', '" + kraj_id + "', '" + tel + "', '" + date + "', '" + password + "', '" + confirmation + "', '" + rank + "')";
@@ -343,22 +351,22 @@ Connection Conn = null;
         try 
         {
             Statement stavek = Conn.createStatement();
-                String query = "SELECT register ('" + name + "', '" + surname + "', '" + email + "', (" + kraj_id + "), '" + tel + "', '" + date + "', '" + generatedPassword + "', '" + generatedConfirm + "', " + rank + ")";
-                System.out.println(query);
-                Statement statement = Conn.createStatement();
-                rezultat = statement.executeQuery(query);
-                while(rezultat.next()){
-                    int er = rezultat.getInt("register");
-                    System.out.println(er);
-                }
-                final JDialog dialog = new JDialog();
-                dialog.setAlwaysOnTop(true);
-                JOptionPane.showMessageDialog(dialog, "Uspešno ste se registrirali");
-                this.setVisible(false);
-                Login Prijava = new Login();
-                Prijava.setVisible(true);
+            String query = "SELECT register ('" + name + "', '" + surname + "', '" + email + "', (" + kraj_id + "), '" + tel + "', '" + date + "', '" + generatedPassword + "', '" + generatedConfirm + "', " + rank + ")";
+            System.out.println(query);
+            Statement statement = Conn.createStatement();
+            rezultat = statement.executeQuery(query);
+            while(rezultat.next()){
+                int er = rezultat.getInt("register");
+                System.out.println(er);
+            }
+            final JDialog dialog = new JDialog();
+            dialog.setAlwaysOnTop(true);
+            JOptionPane.showMessageDialog(dialog, "Uspešno ste se registrirali");
+            this.setVisible(false);
+            Login Prijava = new Login();
+            Prijava.setVisible(true);
                 
-                Conn.close();
+            Conn.close();
         
         } catch (SQLException ex) {
             Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
@@ -381,7 +389,7 @@ Connection Conn = null;
         try 
         {
             Statement stmt = Conn.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT * FROM residences"); //FIX
+            ResultSet rs = stmt.executeQuery("SELECT * FROM residences");
         
             while (rs.next()) {
                 String pat = rs.getString("name");
