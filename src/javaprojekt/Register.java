@@ -31,7 +31,6 @@ Connection Conn = null;
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTitleLabel = new javax.swing.JLabel();
         jRegisterPanel = new javax.swing.JPanel();
         jNameTextBox = new javax.swing.JTextField();
         jEmailTextBox = new javax.swing.JTextField();
@@ -54,6 +53,7 @@ Connection Conn = null;
         jSurnameLabel = new javax.swing.JLabel();
         jCloseButton = new javax.swing.JButton();
         jLoginButton = new javax.swing.JButton();
+        jTitleLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(1500, 870));
@@ -63,27 +63,16 @@ Connection Conn = null;
             }
         });
 
-        jTitleLabel.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
-        jTitleLabel.setText("Create an account");
-
         jNameTextBox.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jNameTextBox.setText("Vnesi ime..");
-        jNameTextBox.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jNameTextBoxMouseClicked(evt);
-            }
-        });
 
         jEmailTextBox.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jEmailTextBox.setText("Vnesi email...");
-        jEmailTextBox.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jEmailTextBoxMouseClicked(evt);
-            }
-        });
 
+        jPasswordTextBox.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jPasswordTextBox.setToolTipText("Vnesi geslo...");
 
+        jConfirmationTextBox.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jConfirmationTextBox.setToolTipText("Vnesi ponovno...");
 
         jNameLabel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -108,11 +97,6 @@ Connection Conn = null;
 
         jTelTextBox.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jTelTextBox.setText("Vnesi telefonsko...");
-        jTelTextBox.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jTelTextBoxMouseClicked(evt);
-            }
-        });
 
         jKrajComboBox.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jKrajComboBox.addActionListener(new java.awt.event.ActionListener() {
@@ -132,35 +116,15 @@ Connection Conn = null;
 
         jDayTextBox.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jDayTextBox.setText("Dan");
-        jDayTextBox.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jDayTextBoxMouseClicked(evt);
-            }
-        });
 
         jMonthTextBox.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jMonthTextBox.setText("Mesec");
-        jMonthTextBox.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jMonthTextBoxMouseClicked(evt);
-            }
-        });
 
         jYearTextBox.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jYearTextBox.setText("Leto");
-        jYearTextBox.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jYearTextBoxMouseClicked(evt);
-            }
-        });
 
         jSurnameTextBox.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jSurnameTextBox.setText("Vnesi priimek..");
-        jSurnameTextBox.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jSurnameTextBoxMouseClicked(evt);
-            }
-        });
 
         jSurnameLabel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jSurnameLabel.setText("Surname:");
@@ -181,66 +145,73 @@ Connection Conn = null;
             }
         });
 
+        jTitleLabel.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
+        jTitleLabel.setText("Create an account");
+
         javax.swing.GroupLayout jRegisterPanelLayout = new javax.swing.GroupLayout(jRegisterPanel);
         jRegisterPanel.setLayout(jRegisterPanelLayout);
         jRegisterPanelLayout.setHorizontalGroup(
             jRegisterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jRegisterPanelLayout.createSequentialGroup()
                 .addGroup(jRegisterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jRegisterPanelLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(jRegisterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPasswordTextBox, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jConfirmationTextBox, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jRegisterPanelLayout.createSequentialGroup()
-                        .addGap(35, 35, 35)
                         .addGroup(jRegisterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jRegisterPanelLayout.createSequentialGroup()
+                                .addGap(35, 35, 35)
                                 .addGroup(jRegisterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jSurnameLabel)
-                                    .addComponent(jNameLabel)
-                                    .addComponent(jEmailLabel))
-                                .addGap(141, 141, 141)
-                                .addGroup(jRegisterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jEmailTextBox, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jSurnameTextBox, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jNameTextBox, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(jRegisterPanelLayout.createSequentialGroup()
+                                        .addGroup(jRegisterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jSurnameLabel)
+                                            .addComponent(jNameLabel)
+                                            .addComponent(jEmailLabel)
+                                            .addComponent(jKrajLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jTelLabel)
+                                            .addComponent(jPasswordLabel)
+                                            .addComponent(jDateLabel)
+                                            .addComponent(jConfirmLabel))
+                                        .addGap(34, 34, 34)
+                                        .addGroup(jRegisterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jKrajComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGroup(jRegisterPanelLayout.createSequentialGroup()
+                                                .addComponent(jDayTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(jMonthTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(jYearTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(jTelTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jEmailTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jSurnameTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jNameTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(jTitleLabel)))
                             .addGroup(jRegisterPanelLayout.createSequentialGroup()
-                                .addGroup(jRegisterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jKrajLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTelLabel)
-                                    .addComponent(jDateLabel)
-                                    .addComponent(jPasswordLabel)
-                                    .addComponent(jConfirmLabel))
-                                .addGap(34, 34, 34)
-                                .addGroup(jRegisterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jConfirmationTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jRegisterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jKrajComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jTelTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGroup(jRegisterPanelLayout.createSequentialGroup()
-                                            .addComponent(jDayTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGap(18, 18, 18)
-                                            .addComponent(jMonthTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGap(18, 18, 18)
-                                            .addComponent(jYearTextBox))
-                                        .addComponent(jPasswordTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                    .addGroup(jRegisterPanelLayout.createSequentialGroup()
-                        .addGap(156, 156, 156)
-                        .addComponent(jSubmitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(53, 53, 53)
-                        .addComponent(jLoginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(33, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jRegisterPanelLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jCloseButton, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(247, 247, 247))
+                                .addGap(130, 130, 130)
+                                .addComponent(jSubmitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLoginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jRegisterPanelLayout.createSequentialGroup()
+                                .addGap(236, 236, 236)
+                                .addComponent(jCloseButton, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         jRegisterPanelLayout.setVerticalGroup(
             jRegisterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jRegisterPanelLayout.createSequentialGroup()
-                .addGroup(jRegisterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jNameLabel)
-                    .addComponent(jNameTextBox, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap()
+                .addComponent(jTitleLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jRegisterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSurnameLabel)
-                    .addComponent(jSurnameTextBox, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jRegisterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jNameTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jNameLabel))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jRegisterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jSurnameTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jSurnameLabel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jRegisterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jEmailTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -253,30 +224,27 @@ Connection Conn = null;
                 .addGroup(jRegisterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTelTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTelLabel))
-                .addGroup(jRegisterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jRegisterPanelLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jRegisterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jDayTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jMonthTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jYearTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jDateLabel))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPasswordTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jRegisterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jConfirmationTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jConfirmLabel)))
-                    .addGroup(jRegisterPanelLayout.createSequentialGroup()
-                        .addGap(74, 74, 74)
-                        .addComponent(jPasswordLabel)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jRegisterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jDayTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jMonthTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jYearTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jDateLabel))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jRegisterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jPasswordTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPasswordLabel))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jRegisterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jConfirmationTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jConfirmLabel))
                 .addGap(18, 18, 18)
-                .addGroup(jRegisterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jRegisterPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jSubmitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLoginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jCloseButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(43, Short.MAX_VALUE))
+                .addContainerGap(72, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -284,55 +252,28 @@ Connection Conn = null;
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(285, 285, 285)
-                        .addComponent(jRegisterPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(546, 546, 546)
-                        .addComponent(jTitleLabel)))
-                .addContainerGap(300, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(jRegisterPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(300, 300, 300)
-                .addComponent(jTitleLabel)
-                .addGap(18, 18, 18)
-                .addComponent(jRegisterPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(300, Short.MAX_VALUE))
+                .addGap(28, 28, 28)
+                .addComponent(jRegisterPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
-        pack();
+        setBounds(0, 0, 733, 783);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jCloseButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCloseButtonActionPerformed
         System.exit(0);
     }//GEN-LAST:event_jCloseButtonActionPerformed
 
-    private void jSurnameTextBoxMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jSurnameTextBoxMouseClicked
-        jSurnameTextBox.setText(null);
-    }//GEN-LAST:event_jSurnameTextBoxMouseClicked
-
-    private void jYearTextBoxMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jYearTextBoxMouseClicked
-        jYearTextBox.setText(null);
-    }//GEN-LAST:event_jYearTextBoxMouseClicked
-
-    private void jMonthTextBoxMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMonthTextBoxMouseClicked
-        jMonthTextBox.setText(null);
-    }//GEN-LAST:event_jMonthTextBoxMouseClicked
-
-    private void jDayTextBoxMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jDayTextBoxMouseClicked
-        jDayTextBox.setText(null);
-    }//GEN-LAST:event_jDayTextBoxMouseClicked
-
     private void jKrajComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jKrajComboBoxActionPerformed
       //Aa
     }//GEN-LAST:event_jKrajComboBoxActionPerformed
-
-    private void jTelTextBoxMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTelTextBoxMouseClicked
-        jTelTextBox.setText(null);
-    }//GEN-LAST:event_jTelTextBoxMouseClicked
 
     private void jSubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSubmitButtonActionPerformed
         if ( jNameTextBox.getText().trim().length() == 0
@@ -414,14 +355,6 @@ Connection Conn = null;
     }
         
     }//GEN-LAST:event_jSubmitButtonActionPerformed
-
-    private void jEmailTextBoxMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jEmailTextBoxMouseClicked
-        jEmailTextBox.setText(null);
-    }//GEN-LAST:event_jEmailTextBoxMouseClicked
-
-    private void jNameTextBoxMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jNameTextBoxMouseClicked
-        jNameTextBox.setText(null);
-    }//GEN-LAST:event_jNameTextBoxMouseClicked
 
     private void jLoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jLoginButtonActionPerformed
         this.setVisible(false);

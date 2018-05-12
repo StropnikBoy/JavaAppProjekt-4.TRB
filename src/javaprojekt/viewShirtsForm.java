@@ -25,10 +25,10 @@ public class viewShirtsForm extends javax.swing.JFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
-        jKrajComboBox = new javax.swing.JComboBox<>();
+        jSizesComboBox = new javax.swing.JComboBox<>();
         jSubmitButton = new javax.swing.JButton();
         jSubmitButton1 = new javax.swing.JButton();
-        jKrajComboBox1 = new javax.swing.JComboBox<>();
+        jBrandComboBox = new javax.swing.JComboBox<>();
         jEmailLabel = new javax.swing.JLabel();
         jEmailLabel1 = new javax.swing.JLabel();
         jRadioButton1 = new javax.swing.JRadioButton();
@@ -36,15 +36,20 @@ public class viewShirtsForm extends javax.swing.JFrame {
         scrollbar1 = new java.awt.Scrollbar();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
-        jKrajComboBox.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jKrajComboBox.addActionListener(new java.awt.event.ActionListener() {
+        jSizesComboBox.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jSizesComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jKrajComboBoxActionPerformed(evt);
+                jSizesComboBoxActionPerformed(evt);
             }
         });
 
@@ -64,10 +69,10 @@ public class viewShirtsForm extends javax.swing.JFrame {
             }
         });
 
-        jKrajComboBox1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jKrajComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        jBrandComboBox.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jBrandComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jKrajComboBox1ActionPerformed(evt);
+                jBrandComboBoxActionPerformed(evt);
             }
         });
 
@@ -98,8 +103,8 @@ public class viewShirtsForm extends javax.swing.JFrame {
                             .addComponent(jEmailLabel1))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 94, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jKrajComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jKrajComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jSizesComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jBrandComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(80, 80, 80)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -124,11 +129,11 @@ public class viewShirtsForm extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(53, 53, 53)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jKrajComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jBrandComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jEmailLabel))
                         .addGap(32, 32, 32)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jKrajComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jSizesComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jEmailLabel1))))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -149,22 +154,34 @@ public class viewShirtsForm extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jKrajComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jKrajComboBoxActionPerformed
+    private void jSizesComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSizesComboBoxActionPerformed
         //Aa
-    }//GEN-LAST:event_jKrajComboBoxActionPerformed
+    }//GEN-LAST:event_jSizesComboBoxActionPerformed
 
     private void jSubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSubmitButtonActionPerformed
-
-
+        this.setVisible(false);
+        UserStore Home = new UserStore();
+        Home.setVisible(true);
+               
     }//GEN-LAST:event_jSubmitButtonActionPerformed
 
     private void jSubmitButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSubmitButton1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jSubmitButton1ActionPerformed
 
-    private void jKrajComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jKrajComboBox1ActionPerformed
+    private void jBrandComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBrandComboBoxActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jKrajComboBox1ActionPerformed
+    }//GEN-LAST:event_jBrandComboBoxActionPerformed
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        jBrandComboBox.addItem("Maverick");
+        jBrandComboBox.addItem("Adidas");
+        
+        jSizesComboBox.addItem("S");
+        jSizesComboBox.addItem("M");
+        jSizesComboBox.addItem("L");
+        jSizesComboBox.addItem("XL");
+    }//GEN-LAST:event_formWindowOpened
 
     /**
      * @param args the command line arguments
@@ -202,13 +219,13 @@ public class viewShirtsForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> jBrandComboBox;
     private javax.swing.JLabel jEmailLabel;
     private javax.swing.JLabel jEmailLabel1;
-    private javax.swing.JComboBox<String> jKrajComboBox;
-    private javax.swing.JComboBox<String> jKrajComboBox1;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JComboBox<String> jSizesComboBox;
     private javax.swing.JButton jSubmitButton;
     private javax.swing.JButton jSubmitButton1;
     private javax.swing.JTextArea jTextArea1;
