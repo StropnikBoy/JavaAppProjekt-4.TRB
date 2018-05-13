@@ -43,11 +43,6 @@ public class UserStore extends javax.swing.JFrame {
         jUserEditButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        addWindowListener(new java.awt.event.WindowAdapter() {
-            public void windowOpened(java.awt.event.WindowEvent evt) {
-                formWindowOpened(evt);
-            }
-        });
 
         jCloseButton.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jCloseButton.setText("Close");
@@ -99,11 +94,6 @@ public class UserStore extends javax.swing.JFrame {
 
         jTitleLabel.setFont(new java.awt.Font("Times New Roman", 1, 48)); // NOI18N
         jTitleLabel.setText("Online Store");
-        jTitleLabel.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTitleLabelActionPerformed(evt);
-            }
-        });
 
         jOrdersButton.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jOrdersButton.setText("View Orders");
@@ -193,10 +183,6 @@ public class UserStore extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTitleLabelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTitleLabelActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTitleLabelActionPerformed
-
     private void jCloseButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCloseButtonActionPerformed
         System.exit(0);
     }//GEN-LAST:event_jCloseButtonActionPerformed
@@ -206,10 +192,6 @@ public class UserStore extends javax.swing.JFrame {
         HomePage Home = new HomePage();
         Home.setVisible(true);
     }//GEN-LAST:event_jLogoutButtonActionPerformed
-
-    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-        
-    }//GEN-LAST:event_formWindowOpened
 
     private void jShirtsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jShirtsButtonActionPerformed
         this.setVisible(false);
@@ -237,35 +219,8 @@ public class UserStore extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jUserEditButtonActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(UserStore.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(UserStore.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(UserStore.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(UserStore.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
 
-        /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new UserStore().setVisible(true);
