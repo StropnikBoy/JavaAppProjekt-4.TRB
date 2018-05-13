@@ -24,16 +24,17 @@ public class viewShirtsForm extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jEmailLabel1 = new javax.swing.JLabel();
-        scrollbar1 = new java.awt.Scrollbar();
-        jSizesComboBox = new javax.swing.JComboBox<>();
+        jPictureBox = new javax.swing.JLabel();
+        jSizesLabel = new javax.swing.JLabel();
+        jNameComboBox = new javax.swing.JComboBox<>();
         jBrandComboBox = new javax.swing.JComboBox<>();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jEmailLabel = new javax.swing.JLabel();
-        jSubmitButton = new javax.swing.JButton();
-        jSubmitButton1 = new javax.swing.JButton();
+        jFemaleRadioButton = new javax.swing.JRadioButton();
+        jMaleRadioButton = new javax.swing.JRadioButton();
+        jNameLabel = new javax.swing.JLabel();
+        jCheckoutButton = new javax.swing.JButton();
+        jCancelButton = new javax.swing.JButton();
+        jBrandLabel = new javax.swing.JLabel();
+        jSizesComboBox = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -44,25 +45,23 @@ public class viewShirtsForm extends javax.swing.JFrame {
 
         jPanel1.setLayout(null);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\theph\\Desktop\\Items\\Shirts\\adidas_T-Shirt.jpg")); // NOI18N
-        jPanel1.add(jLabel1);
-        jLabel1.setBounds(370, 30, 330, 320);
+        jPictureBox.setIcon(new javax.swing.ImageIcon("C:\\Users\\theph\\Desktop\\Items\\Shirts\\adidas_T-Shirt.jpg")); // NOI18N
+        jPanel1.add(jPictureBox);
+        jPictureBox.setBounds(390, 20, 410, 320);
 
-        jEmailLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jEmailLabel1.setText("Sizes:");
-        jPanel1.add(jEmailLabel1);
-        jEmailLabel1.setBounds(20, 100, 61, 29);
-        jPanel1.add(scrollbar1);
-        scrollbar1.setBounds(510, 370, 100, 33);
+        jSizesLabel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jSizesLabel.setText("Sizes:");
+        jPanel1.add(jSizesLabel);
+        jSizesLabel.setBounds(20, 190, 61, 29);
 
-        jSizesComboBox.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jSizesComboBox.addActionListener(new java.awt.event.ActionListener() {
+        jNameComboBox.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jNameComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jSizesComboBoxActionPerformed(evt);
+                jNameComboBoxActionPerformed(evt);
             }
         });
-        jPanel1.add(jSizesComboBox);
-        jSizesComboBox.setBounds(120, 30, 197, 50);
+        jPanel1.add(jNameComboBox);
+        jNameComboBox.setBounds(120, 100, 197, 50);
 
         jBrandComboBox.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jBrandComboBox.addActionListener(new java.awt.event.ActionListener() {
@@ -71,77 +70,91 @@ public class viewShirtsForm extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jBrandComboBox);
-        jBrandComboBox.setBounds(120, 90, 197, 50);
+        jBrandComboBox.setBounds(120, 20, 197, 50);
 
-        jRadioButton2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jRadioButton2.setText("Female");
-        jPanel1.add(jRadioButton2);
-        jRadioButton2.setBounds(40, 170, 83, 31);
+        jFemaleRadioButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jFemaleRadioButton.setText("Female");
+        jPanel1.add(jFemaleRadioButton);
+        jFemaleRadioButton.setBounds(110, 290, 83, 31);
 
-        jRadioButton1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jRadioButton1.setText("Male");
-        jPanel1.add(jRadioButton1);
-        jRadioButton1.setBounds(130, 170, 65, 31);
+        jMaleRadioButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jMaleRadioButton.setText("Male");
+        jPanel1.add(jMaleRadioButton);
+        jMaleRadioButton.setBounds(240, 290, 65, 31);
 
-        jEmailLabel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jEmailLabel.setText("Brand:");
-        jPanel1.add(jEmailLabel);
-        jEmailLabel.setBounds(20, 40, 70, 29);
+        jNameLabel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jNameLabel.setText("Name:");
+        jPanel1.add(jNameLabel);
+        jNameLabel.setBounds(20, 110, 70, 29);
 
-        jSubmitButton.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jSubmitButton.setText("Checkout");
-        jSubmitButton.addActionListener(new java.awt.event.ActionListener() {
+        jCheckoutButton.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jCheckoutButton.setText("Checkout");
+        jCheckoutButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jSubmitButtonActionPerformed(evt);
+                jCheckoutButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(jSubmitButton);
-        jSubmitButton.setBounds(460, 430, 200, 50);
+        jPanel1.add(jCheckoutButton);
+        jCheckoutButton.setBounds(490, 450, 200, 50);
 
-        jSubmitButton1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jSubmitButton1.setText("Go Back");
-        jSubmitButton1.addActionListener(new java.awt.event.ActionListener() {
+        jCancelButton.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jCancelButton.setText("Go Back");
+        jCancelButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jSubmitButton1ActionPerformed(evt);
+                jCancelButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(jSubmitButton1);
-        jSubmitButton1.setBounds(30, 430, 200, 50);
+        jPanel1.add(jCancelButton);
+        jCancelButton.setBounds(20, 460, 200, 50);
+
+        jBrandLabel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jBrandLabel.setText("Brand:");
+        jPanel1.add(jBrandLabel);
+        jBrandLabel.setBounds(20, 30, 70, 29);
+
+        jSizesComboBox.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jSizesComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jSizesComboBoxActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jSizesComboBox);
+        jSizesComboBox.setBounds(120, 190, 197, 50);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 767, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(631, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 816, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 527, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jSizesComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSizesComboBoxActionPerformed
+    private void jNameComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jNameComboBoxActionPerformed
         //Aa
-    }//GEN-LAST:event_jSizesComboBoxActionPerformed
+    }//GEN-LAST:event_jNameComboBoxActionPerformed
 
-    private void jSubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSubmitButtonActionPerformed
+    private void jCheckoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckoutButtonActionPerformed
         this.setVisible(false);
         UserStore Home = new UserStore();
         Home.setVisible(true);
                
-    }//GEN-LAST:event_jSubmitButtonActionPerformed
+    }//GEN-LAST:event_jCheckoutButtonActionPerformed
 
-    private void jSubmitButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSubmitButton1ActionPerformed
+    private void jCancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCancelButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jSubmitButton1ActionPerformed
+    }//GEN-LAST:event_jCancelButtonActionPerformed
 
     private void jBrandComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBrandComboBoxActionPerformed
         // TODO add your handling code here:
@@ -151,11 +164,15 @@ public class viewShirtsForm extends javax.swing.JFrame {
         jBrandComboBox.addItem("Maverick");
         jBrandComboBox.addItem("Adidas");
         
-        jSizesComboBox.addItem("S");
-        jSizesComboBox.addItem("M");
-        jSizesComboBox.addItem("L");
-        jSizesComboBox.addItem("XL");
+        jNameComboBox.addItem("S");
+        jNameComboBox.addItem("M");
+        jNameComboBox.addItem("L");
+        jNameComboBox.addItem("XL");
     }//GEN-LAST:event_formWindowOpened
+
+    private void jSizesComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSizesComboBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jSizesComboBoxActionPerformed
 
     /**
      * @param args the command line arguments
@@ -194,15 +211,16 @@ public class viewShirtsForm extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> jBrandComboBox;
-    private javax.swing.JLabel jEmailLabel;
-    private javax.swing.JLabel jEmailLabel1;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jBrandLabel;
+    private javax.swing.JButton jCancelButton;
+    private javax.swing.JButton jCheckoutButton;
+    private javax.swing.JRadioButton jFemaleRadioButton;
+    private javax.swing.JRadioButton jMaleRadioButton;
+    private javax.swing.JComboBox<String> jNameComboBox;
+    private javax.swing.JLabel jNameLabel;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
+    private javax.swing.JLabel jPictureBox;
     private javax.swing.JComboBox<String> jSizesComboBox;
-    private javax.swing.JButton jSubmitButton;
-    private javax.swing.JButton jSubmitButton1;
-    private java.awt.Scrollbar scrollbar1;
+    private javax.swing.JLabel jSizesLabel;
     // End of variables declaration//GEN-END:variables
 }
