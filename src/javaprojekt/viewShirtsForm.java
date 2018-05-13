@@ -23,17 +23,17 @@ public class viewShirtsForm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jEmailLabel1 = new javax.swing.JLabel();
+        scrollbar1 = new java.awt.Scrollbar();
         jSizesComboBox = new javax.swing.JComboBox<>();
+        jBrandComboBox = new javax.swing.JComboBox<>();
+        jRadioButton2 = new javax.swing.JRadioButton();
+        jRadioButton1 = new javax.swing.JRadioButton();
+        jEmailLabel = new javax.swing.JLabel();
         jSubmitButton = new javax.swing.JButton();
         jSubmitButton1 = new javax.swing.JButton();
-        jBrandComboBox = new javax.swing.JComboBox<>();
-        jEmailLabel = new javax.swing.JLabel();
-        jEmailLabel1 = new javax.swing.JLabel();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        scrollbar1 = new java.awt.Scrollbar();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -42,9 +42,18 @@ public class viewShirtsForm extends javax.swing.JFrame {
             }
         });
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        jPanel1.setLayout(null);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\theph\\Desktop\\Items\\Shirts\\adidas_T-Shirt.jpg")); // NOI18N
+        jPanel1.add(jLabel1);
+        jLabel1.setBounds(370, 30, 330, 320);
+
+        jEmailLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jEmailLabel1.setText("Sizes:");
+        jPanel1.add(jEmailLabel1);
+        jEmailLabel1.setBounds(20, 100, 61, 29);
+        jPanel1.add(scrollbar1);
+        scrollbar1.setBounds(510, 370, 100, 33);
 
         jSizesComboBox.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jSizesComboBox.addActionListener(new java.awt.event.ActionListener() {
@@ -52,6 +61,32 @@ public class viewShirtsForm extends javax.swing.JFrame {
                 jSizesComboBoxActionPerformed(evt);
             }
         });
+        jPanel1.add(jSizesComboBox);
+        jSizesComboBox.setBounds(120, 30, 197, 50);
+
+        jBrandComboBox.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jBrandComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBrandComboBoxActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jBrandComboBox);
+        jBrandComboBox.setBounds(120, 90, 197, 50);
+
+        jRadioButton2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jRadioButton2.setText("Female");
+        jPanel1.add(jRadioButton2);
+        jRadioButton2.setBounds(40, 170, 83, 31);
+
+        jRadioButton1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jRadioButton1.setText("Male");
+        jPanel1.add(jRadioButton1);
+        jRadioButton1.setBounds(130, 170, 65, 31);
+
+        jEmailLabel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jEmailLabel.setText("Brand:");
+        jPanel1.add(jEmailLabel);
+        jEmailLabel.setBounds(20, 40, 70, 29);
 
         jSubmitButton.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jSubmitButton.setText("Checkout");
@@ -60,6 +95,8 @@ public class viewShirtsForm extends javax.swing.JFrame {
                 jSubmitButtonActionPerformed(evt);
             }
         });
+        jPanel1.add(jSubmitButton);
+        jSubmitButton.setBounds(460, 430, 200, 50);
 
         jSubmitButton1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jSubmitButton1.setText("Go Back");
@@ -68,87 +105,24 @@ public class viewShirtsForm extends javax.swing.JFrame {
                 jSubmitButton1ActionPerformed(evt);
             }
         });
-
-        jBrandComboBox.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jBrandComboBox.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBrandComboBoxActionPerformed(evt);
-            }
-        });
-
-        jEmailLabel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jEmailLabel.setText("Brand:");
-
-        jEmailLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jEmailLabel1.setText("Sizes:");
-
-        jRadioButton1.setText("Male");
-
-        jRadioButton2.setText("Female");
+        jPanel1.add(jSubmitButton1);
+        jSubmitButton1.setBounds(30, 430, 200, 50);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(70, 70, 70)
-                        .addComponent(jSubmitButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(45, 45, 45)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jEmailLabel)
-                            .addComponent(jEmailLabel1))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 94, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jSizesComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jBrandComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(80, 80, 80)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jSubmitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(36, 36, 36))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(227, 227, 227)
-                .addComponent(jRadioButton1)
-                .addGap(33, 33, 33)
-                .addComponent(jRadioButton2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(scrollbar1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(117, 117, 117))
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 767, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(631, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(26, 26, 26)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(53, 53, 53)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jBrandComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jEmailLabel))
-                        .addGap(32, 32, 32)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jSizesComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jEmailLabel1))))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(8, 8, 8)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jRadioButton1)
-                            .addComponent(jRadioButton2)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(scrollbar1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(77, 77, 77)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jSubmitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jSubmitButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(139, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
@@ -222,13 +196,13 @@ public class viewShirtsForm extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jBrandComboBox;
     private javax.swing.JLabel jEmailLabel;
     private javax.swing.JLabel jEmailLabel1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JComboBox<String> jSizesComboBox;
     private javax.swing.JButton jSubmitButton;
     private javax.swing.JButton jSubmitButton1;
-    private javax.swing.JTextArea jTextArea1;
     private java.awt.Scrollbar scrollbar1;
     // End of variables declaration//GEN-END:variables
 }
