@@ -12,6 +12,7 @@ import java.security.NoSuchAlgorithmException;
 import java.security.MessageDigest;
 import java.lang.Object;
 import javaprojekt.HomePage;
+import javax.swing.JDialog;
 
 public class viewShirtsForm extends javax.swing.JFrame {
 
@@ -134,14 +135,14 @@ public class viewShirtsForm extends javax.swing.JFrame {
                 jTypeComboBoxItemStateChanged(evt);
             }
         });
+        jTypeComboBox.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTypeComboBoxMouseClicked(evt);
+            }
+        });
         jTypeComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTypeComboBoxActionPerformed(evt);
-            }
-        });
-        jTypeComboBox.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
-            public void propertyChange(java.beans.PropertyChangeEvent evt) {
-                jTypeComboBoxPropertyChange(evt);
             }
         });
         jPanel1.add(jTypeComboBox);
@@ -201,15 +202,15 @@ public class viewShirtsForm extends javax.swing.JFrame {
             while (rs.next()) {
                 String pat = rs.getString("name");
                 jTypeComboBox.addItem(pat);
-                tempCategory = Integer.parseInt(pat);
             }
             Conn.close();
         }
         catch (SQLException ex) {
             Logger.getLogger(Register.class.getName()).log(Level.SEVERE, null, ex);
-        } 
+        }
+       
         
-        try 
+        /*try 
         {
             Statement stmt = Conn.createStatement();
             ResultSet rs = stmt.executeQuery("SELECT * FROM ads");
@@ -227,7 +228,7 @@ public class viewShirtsForm extends javax.swing.JFrame {
         jSizesComboBox.addItem("S");
         jSizesComboBox.addItem("M");
         jSizesComboBox.addItem("L");
-        jSizesComboBox.addItem("XL");
+        jSizesComboBox.addItem("XL");*/
         
         
     }//GEN-LAST:event_formWindowOpened
@@ -237,27 +238,25 @@ public class viewShirtsForm extends javax.swing.JFrame {
     }//GEN-LAST:event_jSizesComboBoxActionPerformed
 
     private void jTypeComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTypeComboBoxActionPerformed
-        jNameComboBox.addItem("Niggers");
+
     }//GEN-LAST:event_jTypeComboBoxActionPerformed
 
-    private void jTypeComboBoxPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_jTypeComboBoxPropertyChange
- 
-    }//GEN-LAST:event_jTypeComboBoxPropertyChange
-
     private void jTypeComboBoxItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jTypeComboBoxItemStateChanged
+
+    }//GEN-LAST:event_jTypeComboBoxItemStateChanged
+
+    private void jTypeComboBoxMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTypeComboBoxMouseClicked
         Connection Conn;
         Database povezava = new Database();
         Conn = povezava.getConnection();
         
-        String value = jTypeComboBox.getSelectedItem().toString();
-        String sql = "SELECT id FROM categories WHERE name = '" + value + "'";
-        Integer id = Integer.parseInt(sql);
-
-        
+        String value = jTypeComboBox.getSelectedItem().toString(); 
+        Integer id = Integer.parseInt(value);
+                
         try 
         {
             Statement stmt = Conn.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT * FROM ads WHERE category_id = " + id +"");
+            ResultSet rs = stmt.executeQuery("SELECT * FROM ads WHERE category_id (SELECT id FROM categories WHERE id = " + id + "");
         
             while (rs.next()) {
                 String pat = rs.getString("name");
@@ -266,9 +265,10 @@ public class viewShirtsForm extends javax.swing.JFrame {
             Conn.close();
         }
         catch (SQLException ex) {
+
             Logger.getLogger(Register.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_jTypeComboBoxItemStateChanged
+    }//GEN-LAST:event_jTypeComboBoxMouseClicked
 
     public static void main(String args[]) {
 

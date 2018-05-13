@@ -355,10 +355,12 @@ Connection Conn = null;
             System.out.println(query);
             Statement statement = Conn.createStatement();
             rezultat = statement.executeQuery(query);
+            
             while(rezultat.next()){
                 int er = rezultat.getInt("register");
                 System.out.println(er);
             }
+            
             final JDialog dialog = new JDialog();
             dialog.setAlwaysOnTop(true);
             JOptionPane.showMessageDialog(dialog, "Uspešno ste se registrirali");
@@ -398,6 +400,7 @@ Connection Conn = null;
             }
             Conn.close();
         }
+        
         catch (SQLException ex) {
             Logger.getLogger(Register.class.getName()).log(Level.SEVERE, null, ex);
         } 
