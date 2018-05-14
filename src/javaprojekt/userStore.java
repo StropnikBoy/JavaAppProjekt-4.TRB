@@ -48,7 +48,6 @@ public class userStore extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jPictureBox = new javax.swing.JLabel();
         jSizesLabel = new javax.swing.JLabel();
         jNameComboBox = new javax.swing.JComboBox<>();
         jBrandComboBox = new javax.swing.JComboBox<>();
@@ -74,10 +73,6 @@ public class userStore extends javax.swing.JFrame {
         });
 
         jPanel1.setLayout(null);
-
-        jPictureBox.setIcon(new javax.swing.ImageIcon("C:\\Users\\theph\\Desktop\\Items\\Shirts\\adidas_T-Shirt.jpg")); // NOI18N
-        jPanel1.add(jPictureBox);
-        jPictureBox.setBounds(390, 20, 410, 320);
 
         jSizesLabel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jSizesLabel.setText("Sizes:");
@@ -135,7 +130,7 @@ public class userStore extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jCheckoutButton);
-        jCheckoutButton.setBounds(520, 400, 200, 50);
+        jCheckoutButton.setBounds(380, 290, 200, 50);
 
         jCancelButton.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jCancelButton.setText("Go Back");
@@ -173,7 +168,7 @@ public class userStore extends javax.swing.JFrame {
         jPriceLabel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jPriceLabel.setText("Type:");
         jPanel1.add(jPriceLabel);
-        jPriceLabel.setBounds(320, 450, 60, 29);
+        jPriceLabel.setBounds(280, 450, 60, 29);
 
         jWelcomeLabel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jWelcomeLabel.setText("Welcome:");
@@ -218,13 +213,15 @@ public class userStore extends javax.swing.JFrame {
     }//GEN-LAST:event_jMaleRadioButtonMouseClicked
 
     private void jCheckoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckoutButtonActionPerformed
-        JOptionPane.showMessageDialog(null, radioText);
-
         this.setVisible(false);
+        Checkout Checking = new Checkout(value);
+        Checking.setVisible(true);
     }//GEN-LAST:event_jCheckoutButtonActionPerformed
 
     private void jCancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCancelButtonActionPerformed
-        // TODO add your handling code here:
+        this.setVisible(false);
+        userHomePage Home = new userHomePage(value);
+        Home.setVisible(true);
     }//GEN-LAST:event_jCancelButtonActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
@@ -398,7 +395,6 @@ public class userStore extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jNameComboBox;
     private javax.swing.JLabel jNameLabel;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JLabel jPictureBox;
     private javax.swing.JLabel jPriceLabel;
     private javax.swing.JComboBox<String> jSizesComboBox;
     private javax.swing.JLabel jSizesLabel;

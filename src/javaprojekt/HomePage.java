@@ -1,5 +1,4 @@
 package javaprojekt;
-
 import java.awt.Toolkit;
 
 public class HomePage extends javax.swing.JFrame {
