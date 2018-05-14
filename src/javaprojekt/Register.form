@@ -60,63 +60,54 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jPasswordTextBox" alignment="1" min="-2" pref="400" max="-2" attributes="0"/>
-                              <Component id="jConfirmationTextBox" alignment="1" min="-2" pref="400" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
                       <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
-                                  <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" attributes="0">
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="jSurnameLabel" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jNameLabel" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jEmailLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jKrajLabel" alignment="0" min="-2" pref="141" max="-2" attributes="0"/>
-                                              <Component id="jTelLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jPasswordLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jDateLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jConfirmLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="jKrajComboBox" min="-2" pref="400" max="-2" attributes="0"/>
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="jDayTextBox" min="-2" pref="106" max="-2" attributes="0"/>
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="jMonthTextBox" min="-2" pref="100" max="-2" attributes="0"/>
-                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                  <Component id="jYearTextBox" min="-2" pref="164" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Component id="jTelTextBox" min="-2" pref="400" max="-2" attributes="0"/>
-                                              <Component id="jEmailTextBox" alignment="0" min="-2" pref="400" max="-2" attributes="0"/>
-                                              <Component id="jSurnameTextBox" alignment="0" min="-2" pref="400" max="-2" attributes="0"/>
-                                              <Component id="jNameTextBox" min="-2" pref="400" max="-2" attributes="0"/>
-                                          </Group>
+                                      <Component id="jSurnameLabel" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jNameLabel" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jEmailLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jKrajLabel" alignment="0" min="-2" pref="141" max="-2" attributes="0"/>
+                                      <Component id="jTelLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jPasswordLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jDateLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jConfirmLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jKrajComboBox" min="-2" pref="400" max="-2" attributes="0"/>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="jDayTextBox" min="-2" pref="106" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="jMonthTextBox" min="-2" pref="100" max="-2" attributes="0"/>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Component id="jYearTextBox" min="-2" pref="164" max="-2" attributes="0"/>
                                       </Group>
-                                      <Component id="jTitleLabel" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jTelTextBox" min="-2" pref="400" max="-2" attributes="0"/>
+                                      <Component id="jEmailTextBox" alignment="0" min="-2" pref="400" max="-2" attributes="0"/>
+                                      <Component id="jSurnameTextBox" alignment="0" min="-2" pref="400" max="-2" attributes="0"/>
+                                      <Component id="jNameTextBox" min="-2" pref="400" max="-2" attributes="0"/>
+                                      <Component id="jPasswordTextBox" min="-2" pref="400" max="-2" attributes="0"/>
+                                      <Component id="jConfirmationTextBox" min="-2" pref="400" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="130" max="-2" attributes="0"/>
-                                  <Component id="jSubmitButton" min="-2" pref="200" max="-2" attributes="0"/>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="jLoginButton" min="-2" pref="200" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="236" max="-2" attributes="0"/>
-                                  <Component id="jCloseButton" min="-2" pref="200" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="jTitleLabel" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="162" max="-2" attributes="0"/>
+                          <Component id="jSubmitButton" min="-2" pref="200" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="jLoginButton" min="-2" pref="200" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace pref="33" max="32767" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  <Component id="jCloseButton" min="-2" pref="200" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="245" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -172,9 +163,9 @@
                       <Component id="jSubmitButton" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
                       <Component id="jLoginButton" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="jCloseButton" min="-2" pref="50" max="-2" attributes="0"/>
-                  <EmptySpace pref="26" max="32767" attributes="0"/>
+                  <EmptySpace pref="20" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>

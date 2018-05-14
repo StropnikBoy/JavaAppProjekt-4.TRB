@@ -269,7 +269,88 @@ public class EditUserInfo extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowOpened
 
     private void jSubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSubmitButtonActionPerformed
+        if ( jNameTextBox.getText().trim().length() == 0
+            || jSurnameTextBox.getText().trim().length() == 0
+            || jEmailTextBox.getText().trim().length() == 0
+            || jTelTextBox.getText().trim().length() == 0
+            || jPasswordTextBox.getText().trim().length() == 0
+            || jDateTextBox.getText().trim().length() == 0)
+        {
+            final JDialog dialog = new JDialog();
+            dialog.setAlwaysOnTop(true);
+            JOptionPane.showMessageDialog(dialog, "Izpolni podatke pravilno.");
+        }
 
+        {
+            Connection Conn;
+            Database povezava = new Database();
+            Conn = povezava.getConnection();
+            
+            String value = jKrajComboBox.getSelectedItem().toString();
+            String x = value.substring(0,4);
+
+            String name = jNameTextBox.getText();
+            String surname = jSurnameTextBox.getText();
+            String email = jEmailTextBox.getText();
+            String tel = jTelTextBox.getText();
+            String kraj_id = "SELECT id FROM residences WHERE post_number = " + Integer.parseInt(x);
+            String date = jDateTextBox.getText();
+            String password = jPasswordTextBox.getText();
+
+            String passwordToHash = password;
+            String generatedPassword = null;
+                        
+            try 
+            {
+                MessageDigest md = MessageDigest.getInstance("MD5");
+                md.update(passwordToHash.getBytes());
+                byte[] bytes = md.digest();
+
+                StringBuilder sb = new StringBuilder();
+                for(int i=0; i< bytes.length ;i++)
+                {
+                    sb.append(Integer.toString((bytes[i] & 0xff) + 0x100, 16).substring(1));
+                }
+                generatedPassword = sb.toString();
+            }
+        
+            catch (NoSuchAlgorithmException e)
+            {
+                e.printStackTrace();
+            }
+        
+        System.out.println(generatedPassword);
+        
+        ResultSet rezultati;
+        String sql = "SELECT id FROM residences WHERE post_number = " + x + "";
+        ResultSet rezultat;
+        
+        try 
+        {
+            Statement stavek = Conn.createStatement();
+            String query = "UPDATE users SET name = '" + name + "', surname = '" + surname + "', kraj_id = " + sql + " ";
+            System.out.println(query);
+            Statement statement = Conn.createStatement();
+            rezultat = statement.executeQuery(query);
+            
+            while(rezultat.next()){
+                int er = rezultat.getInt("register");
+                System.out.println(er);
+            }
+            
+            final JDialog dialog = new JDialog();
+            dialog.setAlwaysOnTop(true);
+            JOptionPane.showMessageDialog(dialog, "Uspešno ste se registrirali");
+            this.setVisible(false);
+            Login Prijava = new Login();
+            Prijava.setVisible(true);
+                
+            Conn.close();
+        
+        } catch (SQLException ex) {
+            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
     }//GEN-LAST:event_jSubmitButtonActionPerformed
 
     private void jCloseButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCloseButtonActionPerformed
