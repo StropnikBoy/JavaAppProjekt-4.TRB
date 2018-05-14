@@ -1,24 +1,29 @@
 package javaprojekt;
-import java.awt.Image;
-import java.io.IOException;
-import java.net.URL;
+import java.awt.Toolkit;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.imageio.ImageIO;
 import javax.swing.JOptionPane;
 import javax.swing.ButtonGroup;
-import javax.swing.ImageIcon;
 
 public class userStore extends javax.swing.JFrame {
 
     String value;
     
     public userStore(String name) {
+        this.setUndecorated(true);
+        this.setAlwaysOnTop(true);
+        this.setResizable(false);
+        this.setVisible(true);
         initComponents();
+        Toolkit tk = Toolkit.getDefaultToolkit();
+                int xSize = (int) tk.getScreenSize().getWidth();
+                int ySize = (int) tk.getScreenSize().getHeight();
+        this.setSize(xSize, ySize);
+        
         groupButton();
         
         jWelcomeLabel.setText("Welcome " + name);
@@ -72,7 +77,7 @@ public class userStore extends javax.swing.JFrame {
 
         jPictureBox.setIcon(new javax.swing.ImageIcon("C:\\Users\\theph\\Desktop\\Items\\Shirts\\adidas_T-Shirt.jpg")); // NOI18N
         jPanel1.add(jPictureBox);
-        jPictureBox.setBounds(390, 20, 410, 320);
+        jPictureBox.setBounds(360, 20, 440, 320);
 
         jSizesLabel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jSizesLabel.setText("Sizes:");
@@ -130,7 +135,7 @@ public class userStore extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jCheckoutButton);
-        jCheckoutButton.setBounds(490, 450, 200, 50);
+        jCheckoutButton.setBounds(520, 400, 200, 50);
 
         jCancelButton.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jCancelButton.setText("Go Back");
@@ -140,7 +145,7 @@ public class userStore extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jCancelButton);
-        jCancelButton.setBounds(20, 460, 200, 50);
+        jCancelButton.setBounds(20, 440, 200, 50);
 
         jBrandLabel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jBrandLabel.setText("Brand:");
@@ -187,13 +192,14 @@ public class userStore extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 816, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 26, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 527, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 514, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();
