@@ -145,7 +145,7 @@ public class userStore extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jCancelButton);
-        jCancelButton.setBounds(20, 490, 200, 50);
+        jCancelButton.setBounds(40, 440, 200, 50);
 
         jBrandLabel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jBrandLabel.setText("Brand:");
@@ -173,7 +173,7 @@ public class userStore extends javax.swing.JFrame {
         jPriceLabel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jPriceLabel.setText("Type:");
         jPanel1.add(jPriceLabel);
-        jPriceLabel.setBounds(40, 440, 60, 29);
+        jPriceLabel.setBounds(320, 450, 60, 29);
 
         jWelcomeLabel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jWelcomeLabel.setText("Welcome:");

@@ -30,10 +30,15 @@ public class Checkout extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jAdressTextBox = new javax.swing.JTextField();
         jTitleLabel = new javax.swing.JLabel();
-        jAdressTextBox1 = new javax.swing.JTextField();
-        jAdressTextBox2 = new javax.swing.JTextField();
-        jAdressTextBox3 = new javax.swing.JTextField();
-        jAdressTextBox4 = new javax.swing.JTextField();
+        jTownTextBox = new javax.swing.JTextField();
+        jCountryTextBox = new javax.swing.JTextField();
+        jPostTextBox = new javax.swing.JTextField();
+        jCardNumberTextBox = new javax.swing.JTextField();
+        jMonthTextBox = new javax.swing.JTextField();
+        jYearTextBox = new javax.swing.JTextField();
+        jCCV2TextBox = new javax.swing.JTextField();
+        jGoBackButton = new javax.swing.JButton();
+        jBuyButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -43,17 +48,44 @@ public class Checkout extends javax.swing.JFrame {
         jTitleLabel.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
         jTitleLabel.setText("Billing Adress");
 
-        jAdressTextBox1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jAdressTextBox1.setText("Town/City...");
+        jTownTextBox.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jTownTextBox.setText("Town/City...");
 
-        jAdressTextBox2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jAdressTextBox2.setText("Country/State...");
+        jCountryTextBox.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jCountryTextBox.setText("Country/State...");
 
-        jAdressTextBox3.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jAdressTextBox3.setText("Postcode/Zip...");
+        jPostTextBox.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jPostTextBox.setText("Postcode/Zip...");
 
-        jAdressTextBox4.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jAdressTextBox4.setText("Card Number");
+        jCardNumberTextBox.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jCardNumberTextBox.setText("Card Number");
+
+        jMonthTextBox.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jMonthTextBox.setText("mm");
+
+        jYearTextBox.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jYearTextBox.setText("yyyy");
+
+        jCCV2TextBox.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jCCV2TextBox.setText("CVV2 Number");
+
+        jGoBackButton.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jGoBackButton.setText("Go Back");
+        jGoBackButton.setActionCommand("Back");
+        jGoBackButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jGoBackButtonActionPerformed(evt);
+            }
+        });
+
+        jBuyButton.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jBuyButton.setText("Buy");
+        jBuyButton.setActionCommand("Back");
+        jBuyButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBuyButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -64,32 +96,58 @@ public class Checkout extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jTitleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jAdressTextBox3, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jAdressTextBox2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 360, Short.MAX_VALUE)
-                            .addComponent(jAdressTextBox1, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPostTextBox, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jCountryTextBox, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 360, Short.MAX_VALUE)
+                            .addComponent(jTownTextBox, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jAdressTextBox, javax.swing.GroupLayout.Alignment.LEADING))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
-                        .addComponent(jAdressTextBox4, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jMonthTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jYearTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jCardNumberTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jCCV2TextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(165, 165, 165)
+                .addComponent(jGoBackButton, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(60, 60, 60)
+                .addComponent(jBuyButton, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 191, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jTitleLabel)
-                .addGap(37, 37, 37)
-                .addComponent(jAdressTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(37, 37, 37)
+                        .addComponent(jAdressTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTownTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jCountryTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPostTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(76, 76, 76)
+                        .addComponent(jCardNumberTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jMonthTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jYearTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jCCV2TextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jAdressTextBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jAdressTextBox4, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jAdressTextBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jAdressTextBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(114, Short.MAX_VALUE))
+                    .addComponent(jGoBackButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jBuyButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(28, 28, 28))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -97,8 +155,8 @@ public class Checkout extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 12, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -109,6 +167,14 @@ public class Checkout extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jGoBackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jGoBackButtonActionPerformed
+
+    }//GEN-LAST:event_jGoBackButtonActionPerformed
+
+    private void jBuyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBuyButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jBuyButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -147,11 +213,16 @@ public class Checkout extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField jAdressTextBox;
-    private javax.swing.JTextField jAdressTextBox1;
-    private javax.swing.JTextField jAdressTextBox2;
-    private javax.swing.JTextField jAdressTextBox3;
-    private javax.swing.JTextField jAdressTextBox4;
+    private javax.swing.JButton jBuyButton;
+    private javax.swing.JTextField jCCV2TextBox;
+    private javax.swing.JTextField jCardNumberTextBox;
+    private javax.swing.JTextField jCountryTextBox;
+    private javax.swing.JButton jGoBackButton;
+    private javax.swing.JTextField jMonthTextBox;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField jPostTextBox;
     private javax.swing.JLabel jTitleLabel;
+    private javax.swing.JTextField jTownTextBox;
+    private javax.swing.JTextField jYearTextBox;
     // End of variables declaration//GEN-END:variables
 }

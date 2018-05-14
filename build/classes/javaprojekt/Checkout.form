@@ -24,8 +24,8 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <Component id="jPanel1" max="32767" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="0" pref="12" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -51,17 +51,33 @@
                           <Component id="jTitleLabel" min="-2" pref="201" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
-                      <Group type="102" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                              <Component id="jAdressTextBox3" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jAdressTextBox2" alignment="0" pref="360" max="32767" attributes="0"/>
-                              <Component id="jAdressTextBox1" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jPostTextBox" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jCountryTextBox" alignment="0" pref="360" max="32767" attributes="0"/>
+                              <Component id="jTownTextBox" alignment="0" max="32767" attributes="0"/>
                               <Component id="jAdressTextBox" alignment="0" max="32767" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="71" max="32767" attributes="0"/>
-                          <Component id="jAdressTextBox4" min="-2" pref="360" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Component id="jMonthTextBox" min="-2" pref="72" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="jYearTextBox" min="-2" pref="107" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="jCardNumberTextBox" min="-2" pref="281" max="-2" attributes="0"/>
+                              <Component id="jCCV2TextBox" alignment="0" min="-2" pref="131" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
+              </Group>
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="165" max="-2" attributes="0"/>
+                  <Component id="jGoBackButton" min="-2" pref="171" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
+                  <Component id="jBuyButton" min="-2" pref="171" max="-2" attributes="0"/>
+                  <EmptySpace min="0" pref="191" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -70,18 +86,35 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jTitleLabel" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
-                  <Component id="jAdressTextBox" min="-2" pref="50" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jAdressTextBox1" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
-                      <Component id="jAdressTextBox4" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+                          <Component id="jAdressTextBox" min="-2" pref="50" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jTownTextBox" min="-2" pref="50" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jCountryTextBox" min="-2" pref="50" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jPostTextBox" min="-2" pref="50" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
+                          <Component id="jCardNumberTextBox" min="-2" pref="50" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jMonthTextBox" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
+                              <Component id="jYearTextBox" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="jCCV2TextBox" min="-2" pref="50" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jAdressTextBox2" min="-2" pref="50" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jAdressTextBox3" min="-2" pref="50" max="-2" attributes="0"/>
-                  <EmptySpace pref="114" max="32767" attributes="0"/>
+                  <EmptySpace pref="36" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jGoBackButton" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
+                      <Component id="jBuyButton" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -103,7 +136,7 @@
             <Property name="text" type="java.lang.String" value="Billing Adress"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jAdressTextBox1">
+        <Component class="javax.swing.JTextField" name="jTownTextBox">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="24" style="0"/>
@@ -111,7 +144,7 @@
             <Property name="text" type="java.lang.String" value="Town/City..."/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jAdressTextBox2">
+        <Component class="javax.swing.JTextField" name="jCountryTextBox">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="24" style="0"/>
@@ -119,7 +152,7 @@
             <Property name="text" type="java.lang.String" value="Country/State..."/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jAdressTextBox3">
+        <Component class="javax.swing.JTextField" name="jPostTextBox">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="24" style="0"/>
@@ -127,13 +160,61 @@
             <Property name="text" type="java.lang.String" value="Postcode/Zip..."/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jAdressTextBox4">
+        <Component class="javax.swing.JTextField" name="jCardNumberTextBox">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="24" style="0"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Card Number"/>
           </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jMonthTextBox">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="18" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="mm"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jYearTextBox">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="18" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="yyyy"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jCCV2TextBox">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="18" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="CVV2 Number"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="jGoBackButton">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="24" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Go Back"/>
+            <Property name="actionCommand" type="java.lang.String" value="Back"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jGoBackButtonActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="jBuyButton">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="24" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Buy"/>
+            <Property name="actionCommand" type="java.lang.String" value="Back"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBuyButtonActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
