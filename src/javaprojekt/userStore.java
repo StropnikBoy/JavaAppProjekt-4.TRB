@@ -15,9 +15,14 @@ import javax.swing.ImageIcon;
 
 public class userStore extends javax.swing.JFrame {
 
-    public userStore() {
+    String value;
+    
+    public userStore(String name) {
         initComponents();
         groupButton();
+        
+        jWelcomeLabel.setText("Welcome " + name);
+        value = name;
     }
     
     private void groupButton()
@@ -28,11 +33,11 @@ public class userStore extends javax.swing.JFrame {
         bg1.add(jFemaleRadioButton);
     }
         
-    public String radioText = "";
-    public String Type = "";
-    public String Brand = "";
-    public String Name = "";
-    public String Picture = "";
+    String radioText = "";
+    String Type = "";
+    String Brand = "";
+    String Name = "";
+    String Picture = "";
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -54,6 +59,7 @@ public class userStore extends javax.swing.JFrame {
         jTypeComboBox = new javax.swing.JComboBox<>();
         jPriceLabel = new javax.swing.JLabel();
         jWelcomeLabel = new javax.swing.JLabel();
+        jGenderLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -165,9 +171,14 @@ public class userStore extends javax.swing.JFrame {
         jPriceLabel.setBounds(40, 390, 60, 29);
 
         jWelcomeLabel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jWelcomeLabel.setText("Type:");
+        jWelcomeLabel.setText("Welcome:");
         jPanel1.add(jWelcomeLabel);
-        jWelcomeLabel.setBounds(30, 20, 60, 29);
+        jWelcomeLabel.setBounds(30, 20, 290, 29);
+
+        jGenderLabel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jGenderLabel.setText("Sizes:");
+        jPanel1.add(jGenderLabel);
+        jGenderLabel.setBounds(30, 340, 61, 29);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -200,9 +211,6 @@ public class userStore extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(null, radioText);
 
         this.setVisible(false);
-        //userHomePage Home = new userHomePage();
-        //Home.setVisible(true);
-
     }//GEN-LAST:event_jCheckoutButtonActionPerformed
 
     private void jCancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCancelButtonActionPerformed
@@ -302,7 +310,7 @@ public class userStore extends javax.swing.JFrame {
     }//GEN-LAST:event_jBrandComboBoxItemStateChanged
 
     private void jNameComboBoxItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jNameComboBoxItemStateChanged
-        Connection Conn;
+        /*Connection Conn;
         Database povezava = new Database();
         Conn = povezava.getConnection();
         
@@ -351,7 +359,7 @@ public class userStore extends javax.swing.JFrame {
             {
                 Logger.getLogger(Register.class.getName()).log(Level.SEVERE, null, ex);
             }
-        }
+        }*/
                          
         jSizesComboBox.addItem("S");
         jSizesComboBox.addItem("M");
@@ -364,7 +372,7 @@ public class userStore extends javax.swing.JFrame {
 
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new userStore().setVisible(true);
+                new userStore("UserStore").setVisible(true);
             }
         });
     }
@@ -375,6 +383,7 @@ public class userStore extends javax.swing.JFrame {
     private javax.swing.JButton jCancelButton;
     private javax.swing.JButton jCheckoutButton;
     private javax.swing.JRadioButton jFemaleRadioButton;
+    private javax.swing.JLabel jGenderLabel;
     private javax.swing.JRadioButton jMaleRadioButton;
     private javax.swing.JComboBox<String> jNameComboBox;
     private javax.swing.JLabel jNameLabel;

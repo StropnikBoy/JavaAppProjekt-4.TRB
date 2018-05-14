@@ -10,8 +10,11 @@ import java.security.NoSuchAlgorithmException;
 
 public class EditUserInfo extends javax.swing.JFrame {
 
+    String value;
+    
     public EditUserInfo(String name) {
         initComponents();
+        value = name;
     }
 
     @SuppressWarnings("unchecked")
@@ -24,7 +27,7 @@ public class EditUserInfo extends javax.swing.JFrame {
         jEmailLabel = new javax.swing.JLabel();
         jEmailTextBox = new javax.swing.JTextField();
         jNameTextBox = new javax.swing.JTextField();
-        jSuranmeTextBox = new javax.swing.JTextField();
+        jSurnameTextBox = new javax.swing.JTextField();
         jTitleLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -48,7 +51,7 @@ public class EditUserInfo extends javax.swing.JFrame {
 
         jNameTextBox.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
 
-        jSuranmeTextBox.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jSurnameTextBox.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
 
         jTitleLabel.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
         jTitleLabel.setText("Edit your data");
@@ -67,10 +70,10 @@ public class EditUserInfo extends javax.swing.JFrame {
                             .addComponent(jSurnameLabel)
                             .addComponent(jNameLabel))
                         .addGap(26, 26, 26)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jSuranmeTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jNameTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jEmailTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jEmailTextBox, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
+                            .addComponent(jNameTextBox)
+                            .addComponent(jSurnameTextBox))))
                 .addContainerGap(28, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -84,7 +87,7 @@ public class EditUserInfo extends javax.swing.JFrame {
                     .addComponent(jNameLabel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jSuranmeTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jSurnameTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jSurnameLabel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -92,8 +95,6 @@ public class EditUserInfo extends javax.swing.JFrame {
                     .addComponent(jEmailLabel))
                 .addContainerGap(249, Short.MAX_VALUE))
         );
-
-        jEmailLabel.getAccessibleContext().setAccessibleName("Email:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -122,12 +123,15 @@ public class EditUserInfo extends javax.swing.JFrame {
         try 
         {
             Statement stmt = Conn.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT * FROM users WHERE name = '" + name +"'");
+            ResultSet rs = stmt.executeQuery("SELECT * FROM users WHERE email = '" + value +"'");
         
             while (rs.next()) {
                 String pat = rs.getString("name");
-                String pat2 = rs.getString("post_number");
-                jKrajComboBox.addItem(pat2 + " " + pat);
+                jNameTextBox.setText(pat);
+                pat = rs.getString("Surname");
+                jSurnameTextBox.setText(pat);
+                pat = rs.getString("Email");
+                jEmailTextBox.setText(pat);
             }
             Conn.close();
         }
@@ -137,34 +141,8 @@ public class EditUserInfo extends javax.swing.JFrame {
         } 
     }//GEN-LAST:event_formWindowOpened
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(EditUserInfo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(EditUserInfo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(EditUserInfo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(EditUserInfo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
 
-        /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new EditUserInfo("EditUsers").setVisible(true);
@@ -174,18 +152,12 @@ public class EditUserInfo extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jEmailLabel;
-    private javax.swing.JLabel jEmailLabel1;
     private javax.swing.JTextField jEmailTextBox;
-    private javax.swing.JTextField jEmailTextBox1;
     private javax.swing.JLabel jNameLabel;
-    private javax.swing.JLabel jNameLabel1;
     private javax.swing.JTextField jNameTextBox;
-    private javax.swing.JTextField jNameTextBox1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField jSuranmeTextBox;
     private javax.swing.JLabel jSurnameLabel;
-    private javax.swing.JLabel jSurnameLabel1;
+    private javax.swing.JTextField jSurnameTextBox;
     private javax.swing.JLabel jTitleLabel;
     // End of variables declaration//GEN-END:variables
 }
