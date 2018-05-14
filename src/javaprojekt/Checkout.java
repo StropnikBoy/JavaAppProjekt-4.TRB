@@ -27,17 +27,84 @@ public class Checkout extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        jAdressTextBox = new javax.swing.JTextField();
+        jTitleLabel = new javax.swing.JLabel();
+        jAdressTextBox1 = new javax.swing.JTextField();
+        jAdressTextBox2 = new javax.swing.JTextField();
+        jAdressTextBox3 = new javax.swing.JTextField();
+        jAdressTextBox4 = new javax.swing.JTextField();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jAdressTextBox.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jAdressTextBox.setText("Adress...");
+
+        jTitleLabel.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
+        jTitleLabel.setText("Billing Adress");
+
+        jAdressTextBox1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jAdressTextBox1.setText("Town/City...");
+
+        jAdressTextBox2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jAdressTextBox2.setText("Country/State...");
+
+        jAdressTextBox3.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jAdressTextBox3.setText("Postcode/Zip...");
+
+        jAdressTextBox4.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jAdressTextBox4.setText("Card Number");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jTitleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jAdressTextBox3, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jAdressTextBox2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 360, Short.MAX_VALUE)
+                            .addComponent(jAdressTextBox1, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jAdressTextBox, javax.swing.GroupLayout.Alignment.LEADING))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
+                        .addComponent(jAdressTextBox4, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE))))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jTitleLabel)
+                .addGap(37, 37, 37)
+                .addComponent(jAdressTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jAdressTextBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jAdressTextBox4, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jAdressTextBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jAdressTextBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(114, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 657, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 501, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
@@ -79,5 +146,12 @@ public class Checkout extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField jAdressTextBox;
+    private javax.swing.JTextField jAdressTextBox1;
+    private javax.swing.JTextField jAdressTextBox2;
+    private javax.swing.JTextField jAdressTextBox3;
+    private javax.swing.JTextField jAdressTextBox4;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel jTitleLabel;
     // End of variables declaration//GEN-END:variables
 }

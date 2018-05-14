@@ -235,8 +235,12 @@ public class adminClasses extends javax.swing.JFrame {
             
                     
             try 
-            {
-                Statement stmt = Conn.createStatement();
+            { 
+                Statement stavek = Conn.createStatement();
+                String query = "INSERT INTO";
+                System.out.println(query);
+                Statement statement = Conn.createStatement();
+                rezultat = statement.executeQuery(query);
             }
         
         catch (SQLException ex) {
