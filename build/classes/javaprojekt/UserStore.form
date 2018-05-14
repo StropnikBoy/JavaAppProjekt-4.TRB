@@ -51,14 +51,13 @@
       </Layout>
       <SubComponents>
         <Component class="javax.swing.JLabel" name="jPictureBox">
-          <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\theph\Desktop\Items\Shirts\adidas_T-Shirt.jpg"/>
-            </Property>
-          </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+<<<<<<< HEAD
               <AbsoluteConstraints x="360" y="20" width="440" height="320"/>
+=======
+              <AbsoluteConstraints x="390" y="30" width="410" height="320"/>
+>>>>>>> bb65317377182b7b782503ac75682a8a263f1bdd
             </Constraint>
           </Constraints>
         </Component>

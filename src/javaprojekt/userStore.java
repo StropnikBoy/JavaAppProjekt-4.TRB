@@ -74,10 +74,12 @@ public class userStore extends javax.swing.JFrame {
         });
 
         jPanel1.setLayout(null);
-
-        jPictureBox.setIcon(new javax.swing.ImageIcon("C:\\Users\\theph\\Desktop\\Items\\Shirts\\adidas_T-Shirt.jpg")); // NOI18N
         jPanel1.add(jPictureBox);
+<<<<<<< HEAD
         jPictureBox.setBounds(360, 20, 440, 320);
+=======
+        jPictureBox.setBounds(390, 30, 410, 320);
+>>>>>>> bb65317377182b7b782503ac75682a8a263f1bdd
 
         jSizesLabel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jSizesLabel.setText("Sizes:");
@@ -110,7 +112,7 @@ public class userStore extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jFemaleRadioButton);
-        jFemaleRadioButton.setBounds(230, 340, 83, 31);
+        jFemaleRadioButton.setBounds(230, 340, 80, 30);
 
         jMaleRadioButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jMaleRadioButton.setText("Male");
@@ -120,7 +122,7 @@ public class userStore extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jMaleRadioButton);
-        jMaleRadioButton.setBounds(130, 340, 65, 31);
+        jMaleRadioButton.setBounds(130, 340, 61, 30);
 
         jNameLabel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jNameLabel.setText("Name:");
@@ -325,7 +327,7 @@ public class userStore extends javax.swing.JFrame {
             try 
             {
                 Statement stmt = Conn.createStatement();
-                ResultSet rs = stmt.executeQuery("SELECT * FROM pictures name ='" + Picture + "'");
+                ResultSet rs = stmt.executeQuery("SELECT * FROM pictures ad_id = (SELECT id FROM ads WHERE name = '" + Brand + "')");
                 String pat = rs.getString("url");
                 Conn.close();
                 
