@@ -13,9 +13,9 @@ import java.security.MessageDigest;
 import java.lang.Object;
 import javaprojekt.HomePage;
 
-public class UserStore extends javax.swing.JFrame {
+public class userHomePage extends javax.swing.JFrame {
 
-    public UserStore() {
+    public userHomePage() {
                 this.setUndecorated(true);
         this.setAlwaysOnTop(true);
         this.setResizable(false);
@@ -195,7 +195,7 @@ public class UserStore extends javax.swing.JFrame {
 
     private void jShirtsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jShirtsButtonActionPerformed
         this.setVisible(false);
-        viewShirtsForm viewShirts = new viewShirtsForm();
+        userStore viewShirts = new userStore();
         viewShirts.setVisible(true);
     }//GEN-LAST:event_jShirtsButtonActionPerformed
 
@@ -223,7 +223,7 @@ public class UserStore extends javax.swing.JFrame {
 
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new UserStore().setVisible(true);
+                new userHomePage().setVisible(true);
             }
         });
     }

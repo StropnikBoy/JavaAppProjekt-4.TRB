@@ -243,7 +243,7 @@ Connection Conn = null;
                 case 0:
                     JOptionPane.showMessageDialog(dialog, "Uspešno ste se prijavli kot user!");
                     this.setVisible(false);
-                    UserStore novo = new UserStore();
+                    userHomePage novo = new userHomePage();
                     novo.setVisible(true);
                     break;
 

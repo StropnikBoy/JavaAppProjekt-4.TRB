@@ -13,13 +13,21 @@ import java.security.MessageDigest;
 import java.lang.Object;
 import javaprojekt.HomePage;
 import javax.swing.JDialog;
+import javax.swing.ButtonGroup;
 
-public class viewShirtsForm extends javax.swing.JFrame {
+public class userStore extends javax.swing.JFrame {
 
-    public viewShirtsForm() {
+    public userStore() {
         initComponents();
+        groupButton();
     }
-
+    
+    public String radioText = "";
+    public String Type = "";
+    public String Brand = "";
+    public String Name = "";
+    public String shit = "";
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -38,6 +46,8 @@ public class viewShirtsForm extends javax.swing.JFrame {
         jSizesComboBox = new javax.swing.JComboBox<>();
         jTypeLabel = new javax.swing.JLabel();
         jTypeComboBox = new javax.swing.JComboBox<>();
+        jPriceLabel = new javax.swing.JLabel();
+        jWelcomeLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -58,18 +68,18 @@ public class viewShirtsForm extends javax.swing.JFrame {
         jSizesLabel.setBounds(30, 260, 61, 29);
 
         jNameComboBox.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jNameComboBox.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jNameComboBoxActionPerformed(evt);
+        jNameComboBox.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jNameComboBoxItemStateChanged(evt);
             }
         });
         jPanel1.add(jNameComboBox);
         jNameComboBox.setBounds(120, 190, 197, 50);
 
         jBrandComboBox.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jBrandComboBox.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBrandComboBoxActionPerformed(evt);
+        jBrandComboBox.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jBrandComboBoxItemStateChanged(evt);
             }
         });
         jPanel1.add(jBrandComboBox);
@@ -77,13 +87,23 @@ public class viewShirtsForm extends javax.swing.JFrame {
 
         jFemaleRadioButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jFemaleRadioButton.setText("Female");
+        jFemaleRadioButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jFemaleRadioButtonMouseClicked(evt);
+            }
+        });
         jPanel1.add(jFemaleRadioButton);
-        jFemaleRadioButton.setBounds(120, 340, 83, 31);
+        jFemaleRadioButton.setBounds(230, 340, 83, 31);
 
         jMaleRadioButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jMaleRadioButton.setText("Male");
+        jMaleRadioButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMaleRadioButtonMouseClicked(evt);
+            }
+        });
         jPanel1.add(jMaleRadioButton);
-        jMaleRadioButton.setBounds(240, 340, 65, 31);
+        jMaleRadioButton.setBounds(130, 340, 65, 31);
 
         jNameLabel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jNameLabel.setText("Name:");
@@ -116,9 +136,9 @@ public class viewShirtsForm extends javax.swing.JFrame {
         jBrandLabel.setBounds(30, 140, 70, 29);
 
         jSizesComboBox.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jSizesComboBox.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jSizesComboBoxActionPerformed(evt);
+        jSizesComboBox.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jSizesComboBoxItemStateChanged(evt);
             }
         });
         jPanel1.add(jSizesComboBox);
@@ -140,13 +160,18 @@ public class viewShirtsForm extends javax.swing.JFrame {
                 jTypeComboBoxMouseClicked(evt);
             }
         });
-        jTypeComboBox.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTypeComboBoxActionPerformed(evt);
-            }
-        });
         jPanel1.add(jTypeComboBox);
         jTypeComboBox.setBounds(120, 70, 197, 50);
+
+        jPriceLabel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jPriceLabel.setText("Type:");
+        jPanel1.add(jPriceLabel);
+        jPriceLabel.setBounds(40, 390, 60, 29);
+
+        jWelcomeLabel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jWelcomeLabel.setText("Type:");
+        jPanel1.add(jWelcomeLabel);
+        jWelcomeLabel.setBounds(30, 20, 60, 29);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -168,13 +193,11 @@ public class viewShirtsForm extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jNameComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jNameComboBoxActionPerformed
-        //Aa
-    }//GEN-LAST:event_jNameComboBoxActionPerformed
-
     private void jCheckoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckoutButtonActionPerformed
+        JOptionPane.showMessageDialog(null, radioText);
+
         this.setVisible(false);
-        UserStore Home = new UserStore();
+        userHomePage Home = new userHomePage();
         Home.setVisible(true);
                
     }//GEN-LAST:event_jCheckoutButtonActionPerformed
@@ -183,16 +206,10 @@ public class viewShirtsForm extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jCancelButtonActionPerformed
 
-    private void jBrandComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBrandComboBoxActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jBrandComboBoxActionPerformed
-
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         Connection Conn;
         Database povezava = new Database();
         Conn = povezava.getConnection();
-        
-        Integer tempCategory = null;
         
         try 
         {
@@ -205,62 +222,88 @@ public class viewShirtsForm extends javax.swing.JFrame {
             }
             Conn.close();
         }
+        
         catch (SQLException ex) {
             Logger.getLogger(Register.class.getName()).log(Level.SEVERE, null, ex);
-        }
-       
-        
-        /*try 
-        {
-            Statement stmt = Conn.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT * FROM ads");
-        
-            while (rs.next()) {
-                String pat = rs.getString("name");
-                jBrandComboBox.addItem(pat);
-            }
-            Conn.close();
-        }
-        catch (SQLException ex) {
-            Logger.getLogger(Register.class.getName()).log(Level.SEVERE, null, ex);
-        } 
-          
-        jSizesComboBox.addItem("S");
-        jSizesComboBox.addItem("M");
-        jSizesComboBox.addItem("L");
-        jSizesComboBox.addItem("XL");*/
-        
-        
+        }     
     }//GEN-LAST:event_formWindowOpened
 
-    private void jSizesComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSizesComboBoxActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jSizesComboBoxActionPerformed
-
-    private void jTypeComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTypeComboBoxActionPerformed
-
-    }//GEN-LAST:event_jTypeComboBoxActionPerformed
-
     private void jTypeComboBoxItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jTypeComboBoxItemStateChanged
-
-    }//GEN-LAST:event_jTypeComboBoxItemStateChanged
-
-    private void jTypeComboBoxMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTypeComboBoxMouseClicked
         Connection Conn;
         Database povezava = new Database();
         Conn = povezava.getConnection();
         
-        String value = jTypeComboBox.getSelectedItem().toString(); 
-        Integer id = Integer.parseInt(value);
-                
+        Type = jTypeComboBox.getSelectedItem().toString(); 
+        jBrandComboBox.removeAllItems();
+
         try 
         {
             Statement stmt = Conn.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT * FROM ads WHERE category_id (SELECT id FROM categories WHERE id = " + id + "");
+            ResultSet rs = stmt.executeQuery("SELECT * FROM ads WHERE category_id = (SELECT id FROM categories WHERE name = '" + Type + "')");
         
             while (rs.next()) {
                 String pat = rs.getString("name");
-                jBrandComboBox.addItem(pat);
+                jBrandComboBox.addItem(pat); 
+            }
+        }
+        catch (SQLException ex) {
+
+            Logger.getLogger(Register.class.getName()).log(Level.SEVERE, null, ex);
+        }
+       
+        
+    }//GEN-LAST:event_jTypeComboBoxItemStateChanged
+
+    private void jTypeComboBoxMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTypeComboBoxMouseClicked
+        
+    }//GEN-LAST:event_jTypeComboBoxMouseClicked
+
+    private void jFemaleRadioButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jFemaleRadioButtonMouseClicked
+        radioText = "Female";
+    }//GEN-LAST:event_jFemaleRadioButtonMouseClicked
+
+    private void jMaleRadioButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMaleRadioButtonMouseClicked
+        radioText = "Male";
+    }//GEN-LAST:event_jMaleRadioButtonMouseClicked
+
+    private void jBrandComboBoxItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jBrandComboBoxItemStateChanged
+        Connection Conn;
+        Database povezava = new Database();
+        Conn = povezava.getConnection();
+                
+        if (jBrandComboBox.getItemCount() == 0)
+        {      
+            try 
+            {
+                Statement stmt = Conn.createStatement();
+                ResultSet rs = stmt.executeQuery("SELECT * FROM pictures WHERE ad_id = (SELECT id FROM ads WHERE name = '" + Brand + "')");
+
+                while (rs.next()) {
+                    String pat = rs.getString("name");
+                    jNameComboBox.addItem(pat);
+                }
+                Conn.close();
+            }
+            catch (SQLException ex) {
+                Logger.getLogger(Register.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+        }
+        
+        else
+        {
+            Brand = jBrandComboBox.getSelectedItem().toString(); 
+            jNameComboBox.removeAllItems();
+        }
+ 
+        try 
+        {
+            Statement stmt = Conn.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT * FROM pictures WHERE ad_id = (SELECT id FROM ads WHERE name = '" + Brand + "')");
+        
+            while (rs.next()) {
+                String pat = rs.getString("name");
+                jNameComboBox.addItem(pat);
             }
             Conn.close();
         }
@@ -268,13 +311,32 @@ public class viewShirtsForm extends javax.swing.JFrame {
 
             Logger.getLogger(Register.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_jTypeComboBoxMouseClicked
+    }//GEN-LAST:event_jBrandComboBoxItemStateChanged
 
+    private void jNameComboBoxItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jNameComboBoxItemStateChanged
+        jSizesComboBox.removeAllItems();
+        jSizesComboBox.addItem("S");
+        jSizesComboBox.addItem("M");
+        jSizesComboBox.addItem("L");
+        jSizesComboBox.addItem("XL");
+    }//GEN-LAST:event_jNameComboBoxItemStateChanged
+
+    private void jSizesComboBoxItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jSizesComboBoxItemStateChanged
+    }//GEN-LAST:event_jSizesComboBoxItemStateChanged
+
+    private void groupButton()
+    {
+        ButtonGroup bg1 = new ButtonGroup();
+        
+        bg1.add(jMaleRadioButton);
+        bg1.add(jFemaleRadioButton);
+    }
+    
     public static void main(String args[]) {
 
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new viewShirtsForm().setVisible(true);
+                new userStore().setVisible(true);
             }
         });
     }
@@ -290,9 +352,11 @@ public class viewShirtsForm extends javax.swing.JFrame {
     private javax.swing.JLabel jNameLabel;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel jPictureBox;
+    private javax.swing.JLabel jPriceLabel;
     private javax.swing.JComboBox<String> jSizesComboBox;
     private javax.swing.JLabel jSizesLabel;
     private javax.swing.JComboBox<String> jTypeComboBox;
     private javax.swing.JLabel jTypeLabel;
+    private javax.swing.JLabel jWelcomeLabel;
     // End of variables declaration//GEN-END:variables
 }
