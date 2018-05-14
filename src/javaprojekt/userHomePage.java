@@ -4,8 +4,10 @@ import java.sql.Connection;
 
 public class userHomePage extends javax.swing.JFrame {
 
+    String value;
+    
     public userHomePage(String name) {
-                this.setUndecorated(true);
+        this.setUndecorated(true);
         this.setAlwaysOnTop(true);
         this.setResizable(false);
         this.setVisible(true);
@@ -16,6 +18,7 @@ public class userHomePage extends javax.swing.JFrame {
         this.setSize(xSize, ySize);
         
         jWelcomeLabel.setText("Welcome " + name);
+        value = name;
     }
 
     @SuppressWarnings("unchecked")
@@ -82,11 +85,12 @@ public class userHomePage extends javax.swing.JFrame {
                             .addComponent(jLogoutButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jShopButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jUserEditButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jOrdersButton, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                            .addComponent(jWelcomeLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(jOrdersButton, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(84, 84, 84)
-                        .addComponent(jTitleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jWelcomeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTitleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(71, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -138,11 +142,15 @@ public class userHomePage extends javax.swing.JFrame {
     }//GEN-LAST:event_jOrdersButtonActionPerformed
 
     private void jUserEditButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jUserEditButtonActionPerformed
-        // TODO add your handling code here:
+        this.setVisible(false);
+        EditUserInfo Edit = new EditUserInfo(value);
+        Edit.setVisible(true);
     }//GEN-LAST:event_jUserEditButtonActionPerformed
 
     private void jShopButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jShopButtonActionPerformed
-        // TODO add your handling code here:
+        this.setVisible(false);
+        userStore Store = new userStore(value);
+        Store.setVisible(true);
     }//GEN-LAST:event_jShopButtonActionPerformed
 
     public static void main(String args[]) {
