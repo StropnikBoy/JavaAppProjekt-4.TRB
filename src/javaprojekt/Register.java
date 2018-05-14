@@ -61,6 +61,8 @@ Connection Conn = null;
             }
         });
 
+        jRegisterPanel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+
         jNameTextBox.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jNameTextBox.setText("Vnesi ime..");
 

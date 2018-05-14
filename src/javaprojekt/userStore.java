@@ -23,7 +23,6 @@ public class userStore extends javax.swing.JFrame {
                 int xSize = (int) tk.getScreenSize().getWidth();
                 int ySize = (int) tk.getScreenSize().getHeight();
         this.setSize(xSize, ySize);
-        
         groupButton();
         
         jWelcomeLabel.setText("Welcome " + name);
@@ -65,6 +64,7 @@ public class userStore extends javax.swing.JFrame {
         jPriceLabel = new javax.swing.JLabel();
         jWelcomeLabel = new javax.swing.JLabel();
         jGenderLabel = new javax.swing.JLabel();
+        jTitleLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -74,17 +74,15 @@ public class userStore extends javax.swing.JFrame {
         });
 
         jPanel1.setLayout(null);
+
+        jPictureBox.setIcon(new javax.swing.ImageIcon("C:\\Users\\theph\\Desktop\\Items\\Shirts\\adidas_T-Shirt.jpg")); // NOI18N
         jPanel1.add(jPictureBox);
-<<<<<<< HEAD
-        jPictureBox.setBounds(360, 20, 440, 320);
-=======
-        jPictureBox.setBounds(390, 30, 410, 320);
->>>>>>> bb65317377182b7b782503ac75682a8a263f1bdd
+        jPictureBox.setBounds(390, 20, 410, 320);
 
         jSizesLabel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jSizesLabel.setText("Sizes:");
         jPanel1.add(jSizesLabel);
-        jSizesLabel.setBounds(30, 260, 61, 29);
+        jSizesLabel.setBounds(30, 300, 61, 29);
 
         jNameComboBox.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jNameComboBox.addItemListener(new java.awt.event.ItemListener() {
@@ -93,7 +91,7 @@ public class userStore extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jNameComboBox);
-        jNameComboBox.setBounds(120, 190, 197, 50);
+        jNameComboBox.setBounds(120, 230, 197, 50);
 
         jBrandComboBox.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jBrandComboBox.addItemListener(new java.awt.event.ItemListener() {
@@ -102,7 +100,7 @@ public class userStore extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jBrandComboBox);
-        jBrandComboBox.setBounds(120, 130, 197, 50);
+        jBrandComboBox.setBounds(120, 170, 197, 50);
 
         jFemaleRadioButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jFemaleRadioButton.setText("Female");
@@ -112,7 +110,7 @@ public class userStore extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jFemaleRadioButton);
-        jFemaleRadioButton.setBounds(230, 340, 80, 30);
+        jFemaleRadioButton.setBounds(230, 370, 83, 31);
 
         jMaleRadioButton.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jMaleRadioButton.setText("Male");
@@ -122,12 +120,12 @@ public class userStore extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jMaleRadioButton);
-        jMaleRadioButton.setBounds(130, 340, 61, 30);
+        jMaleRadioButton.setBounds(130, 370, 65, 31);
 
         jNameLabel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jNameLabel.setText("Name:");
         jPanel1.add(jNameLabel);
-        jNameLabel.setBounds(30, 200, 70, 29);
+        jNameLabel.setBounds(30, 240, 70, 29);
 
         jCheckoutButton.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jCheckoutButton.setText("Checkout");
@@ -147,21 +145,21 @@ public class userStore extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jCancelButton);
-        jCancelButton.setBounds(20, 440, 200, 50);
+        jCancelButton.setBounds(20, 490, 200, 50);
 
         jBrandLabel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jBrandLabel.setText("Brand:");
         jPanel1.add(jBrandLabel);
-        jBrandLabel.setBounds(30, 140, 70, 29);
+        jBrandLabel.setBounds(30, 180, 70, 29);
 
         jSizesComboBox.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jPanel1.add(jSizesComboBox);
-        jSizesComboBox.setBounds(120, 250, 197, 50);
+        jSizesComboBox.setBounds(120, 290, 197, 50);
 
         jTypeLabel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jTypeLabel.setText("Type:");
         jPanel1.add(jTypeLabel);
-        jTypeLabel.setBounds(30, 80, 60, 29);
+        jTypeLabel.setBounds(30, 120, 60, 29);
 
         jTypeComboBox.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jTypeComboBox.addItemListener(new java.awt.event.ItemListener() {
@@ -170,38 +168,42 @@ public class userStore extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jTypeComboBox);
-        jTypeComboBox.setBounds(120, 70, 197, 50);
+        jTypeComboBox.setBounds(120, 110, 197, 50);
 
         jPriceLabel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jPriceLabel.setText("Type:");
         jPanel1.add(jPriceLabel);
-        jPriceLabel.setBounds(40, 390, 60, 29);
+        jPriceLabel.setBounds(40, 440, 60, 29);
 
         jWelcomeLabel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jWelcomeLabel.setText("Welcome:");
         jPanel1.add(jWelcomeLabel);
-        jWelcomeLabel.setBounds(30, 20, 290, 29);
+        jWelcomeLabel.setBounds(30, 60, 290, 29);
 
         jGenderLabel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jGenderLabel.setText("Sizes:");
         jPanel1.add(jGenderLabel);
-        jGenderLabel.setBounds(30, 340, 61, 29);
+        jGenderLabel.setBounds(30, 370, 61, 29);
+
+        jTitleLabel.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
+        jTitleLabel.setText("Buy Items");
+        jPanel1.add(jTitleLabel);
+        jTitleLabel.setBounds(30, 10, 140, 29);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 816, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 24, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 514, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -327,7 +329,7 @@ public class userStore extends javax.swing.JFrame {
             try 
             {
                 Statement stmt = Conn.createStatement();
-                ResultSet rs = stmt.executeQuery("SELECT * FROM pictures ad_id = (SELECT id FROM ads WHERE name = '" + Brand + "')");
+                ResultSet rs = stmt.executeQuery("SELECT * FROM pictures name ='" + Picture + "'");
                 String pat = rs.getString("url");
                 Conn.close();
                 
@@ -400,6 +402,7 @@ public class userStore extends javax.swing.JFrame {
     private javax.swing.JLabel jPriceLabel;
     private javax.swing.JComboBox<String> jSizesComboBox;
     private javax.swing.JLabel jSizesLabel;
+    private javax.swing.JLabel jTitleLabel;
     private javax.swing.JComboBox<String> jTypeComboBox;
     private javax.swing.JLabel jTypeLabel;
     private javax.swing.JLabel jWelcomeLabel;

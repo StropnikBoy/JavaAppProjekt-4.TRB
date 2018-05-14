@@ -1,5 +1,4 @@
 package javaprojekt;
-import javaprojekt.AdminForms.AdminHomePage;
 import java.awt.Toolkit;
 import java.sql.*;
 import java.util.logging.Level;
@@ -240,8 +239,8 @@ Connection Conn = null;
                 case 1:
                     JOptionPane.showMessageDialog(dialog, "Uspešno ste se prijavli kot admin!");
                     this.setVisible(false);
-                    AdminHomePage admi = new AdminHomePage();
-                    admi.setVisible(true);
+                    AdminHomePage admin = new AdminHomePage();
+                    admin.setVisible(true);
                     break;
 
                 default:
