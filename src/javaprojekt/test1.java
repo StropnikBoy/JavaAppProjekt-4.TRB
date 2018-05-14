@@ -8,13 +8,22 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.ButtonGroup;
 
-public class userStore extends javax.swing.JFrame {
+public class test1 extends javax.swing.JFrame {
 
-    public userStore() {
+
+    public test1() {
         initComponents();
         groupButton();
     }
     
+    private void groupButton()
+    {
+        ButtonGroup bg1 = new ButtonGroup();
+        
+        bg1.add(jMaleRadioButton);
+        bg1.add(jFemaleRadioButton);
+    }
+        
     public String radioText = "";
     public String Type = "";
     public String Brand = "";
@@ -61,11 +70,6 @@ public class userStore extends javax.swing.JFrame {
         jSizesLabel.setBounds(30, 260, 61, 29);
 
         jNameComboBox.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jNameComboBox.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                jNameComboBoxItemStateChanged(evt);
-            }
-        });
         jPanel1.add(jNameComboBox);
         jNameComboBox.setBounds(120, 190, 197, 50);
 
@@ -143,11 +147,6 @@ public class userStore extends javax.swing.JFrame {
                 jTypeComboBoxItemStateChanged(evt);
             }
         });
-        jTypeComboBox.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jTypeComboBoxMouseClicked(evt);
-            }
-        });
         jPanel1.add(jTypeComboBox);
         jTypeComboBox.setBounds(120, 70, 197, 50);
 
@@ -165,21 +164,28 @@ public class userStore extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 816, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(26, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 527, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 26, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 527, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jFemaleRadioButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jFemaleRadioButtonMouseClicked
+        radioText = "Female";
+    }//GEN-LAST:event_jFemaleRadioButtonMouseClicked
+
+    private void jMaleRadioButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMaleRadioButtonMouseClicked
+        radioText = "Male";
+    }//GEN-LAST:event_jMaleRadioButtonMouseClicked
 
     private void jCheckoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckoutButtonActionPerformed
         JOptionPane.showMessageDialog(null, radioText);
@@ -187,7 +193,7 @@ public class userStore extends javax.swing.JFrame {
         this.setVisible(false);
         userHomePage Home = new userHomePage();
         Home.setVisible(true);
-               
+
     }//GEN-LAST:event_jCheckoutButtonActionPerformed
 
     private void jCancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCancelButtonActionPerformed
@@ -213,7 +219,7 @@ public class userStore extends javax.swing.JFrame {
         
         catch (SQLException ex) {
             Logger.getLogger(Register.class.getName()).log(Level.SEVERE, null, ex);
-        }     
+        }   
     }//GEN-LAST:event_formWindowOpened
 
     private void jTypeComboBoxItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jTypeComboBoxItemStateChanged
@@ -233,24 +239,13 @@ public class userStore extends javax.swing.JFrame {
                 String pat = rs.getString("name");
                 jBrandComboBox.addItem(pat); 
             }
+            Conn.close();
         }
         catch (SQLException ex) {
 
             Logger.getLogger(Register.class.getName()).log(Level.SEVERE, null, ex);
         }      
     }//GEN-LAST:event_jTypeComboBoxItemStateChanged
-
-    private void jTypeComboBoxMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTypeComboBoxMouseClicked
-        
-    }//GEN-LAST:event_jTypeComboBoxMouseClicked
-
-    private void jFemaleRadioButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jFemaleRadioButtonMouseClicked
-        radioText = "Female";
-    }//GEN-LAST:event_jFemaleRadioButtonMouseClicked
-
-    private void jMaleRadioButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMaleRadioButtonMouseClicked
-        radioText = "Male";
-    }//GEN-LAST:event_jMaleRadioButtonMouseClicked
 
     private void jBrandComboBoxItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jBrandComboBoxItemStateChanged
         Connection Conn;
@@ -279,98 +274,30 @@ public class userStore extends javax.swing.JFrame {
         {
             Brand = jBrandComboBox.getSelectedItem().toString(); 
             jNameComboBox.removeAllItems();
-        }
- 
-        try 
-        {
-            Statement stmt = Conn.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT * FROM pictures WHERE ad_id = (SELECT id FROM ads WHERE name = '" + Brand + "')");
-        
-            while (rs.next()) {
-                String pat = rs.getString("name");
-                jNameComboBox.addItem(pat);
-            }
-            Conn.close();
-        }
-        catch (SQLException ex) {
-
-            Logger.getLogger(Register.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_jBrandComboBoxItemStateChanged
-
-    private void jNameComboBoxItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jNameComboBoxItemStateChanged
-        /*        Connection Conn;
-        Database povezava = new Database();
-        Conn = povezava.getConnection();
-        
-        if (jBrandComboBox.getItemCount() == 0)
-        { 
+            
             try 
             {
                 Statement stmt = Conn.createStatement();
-                 ResultSet rs = stmt.executeQuery("SELECT * FROM pictures WHERE ad_id = (SELECT id FROM ads WHERE name = '" + Picture + "')");
-                String pat = rs.getString("url");
-                
-                URL url = new URL(pat);
-                Image image = ImageIO.read(url);
-                jPictureBox.setIcon(new ImageIcon(image));
+                ResultSet rs = stmt.executeQuery("SELECT * FROM pictures WHERE ad_id = (SELECT id FROM ads WHERE name = '" + Brand + "')");
+        
+                while (rs.next()) {
+                    String pat = rs.getString("name");
+                    jNameComboBox.addItem(pat);
+                }
                 Conn.close();
             }
-            catch (IOException ex) {
-                Logger.getLogger(Register.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            catch (SQLException ex)
-            {
+            catch (SQLException ex) {
                 Logger.getLogger(Register.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-        else
-        {
-            Picture = jBrandComboBox.getSelectedItem().toString();
-        }
-                        
+    }//GEN-LAST:event_jBrandComboBoxItemStateChanged
 
-          try 
-            {
-                Statement stmt = Conn.createStatement();
-                 ResultSet rs = stmt.executeQuery("SELECT * FROM pictures WHERE ad_id = (SELECT id FROM ads WHERE name = '" + Picture + "')");
-                String pat = rs.getString("url");
-                
-                URL url = new URL(pat);
-                Image image = ImageIO.read(url);
-                jPictureBox.setIcon(new ImageIcon(image));
-                Conn.close();
-            }
-            catch (IOException ex) {
-                Logger.getLogger(Register.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            catch (SQLException ex)
-            {
-                Logger.getLogger(Register.class.getName()).log(Level.SEVERE, null, ex);
-            }
-*/
-        
-        
-        jSizesComboBox.removeAllItems();
-        jSizesComboBox.addItem("S");
-        jSizesComboBox.addItem("M");
-        jSizesComboBox.addItem("L");
-        jSizesComboBox.addItem("XL");
-    }//GEN-LAST:event_jNameComboBoxItemStateChanged
 
-    private void groupButton()
-    {
-        ButtonGroup bg1 = new ButtonGroup();
-        
-        bg1.add(jMaleRadioButton);
-        bg1.add(jFemaleRadioButton);
-    }
-    
     public static void main(String args[]) {
 
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new userStore().setVisible(true);
+                new test1().setVisible(true);
             }
         });
     }
