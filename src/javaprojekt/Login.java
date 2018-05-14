@@ -157,7 +157,7 @@ Connection Conn = null;
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        setBounds(0, 0, 640, 378);
+        setBounds(0, 0, 640, 384);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jLoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jLoginButtonActionPerformed
@@ -243,7 +243,7 @@ Connection Conn = null;
                 case 0:
                     JOptionPane.showMessageDialog(dialog, "Uspešno ste se prijavli kot user!");
                     this.setVisible(false);
-                    userHomePage novo = new userHomePage();
+                    userHomePage novo = new userHomePage(jEmailTextBox.getText());
                     novo.setVisible(true);
                     break;
 
