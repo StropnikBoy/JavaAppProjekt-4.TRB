@@ -161,7 +161,7 @@ public class adminClasses extends javax.swing.JFrame {
                         .addComponent(jUpdateButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(68, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
                         .addComponent(jBackButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(24, 24, 24))))
         );
@@ -183,7 +183,29 @@ public class adminClasses extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jUpdateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jUpdateButtonActionPerformed
+        String value = jClassComboBox.getSelectedItem().toString();
+        String newName = jOldClassTextBox.getText();
         
+        Connection Conn;
+        Database povezava = new Database();
+        Conn = povezava.getConnection();
+        
+        try 
+            { 
+                Statement stavek = Conn.createStatement();
+                String query = "SELECT editcategory('"+ value +"', '"+ newName +"')";
+                System.out.println(query);
+                Statement statement = Conn.createStatement();
+                statement.executeQuery(query);
+                
+                final JDialog dialog = new JDialog();
+                dialog.setAlwaysOnTop(true);
+                JOptionPane.showMessageDialog(dialog, "Successful updatet categories.");
+            }
+        
+        catch (SQLException ex) {
+                Logger.getLogger(Register.class.getName()).log(Level.SEVERE, null, ex);
+            } 
     }//GEN-LAST:event_jUpdateButtonActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
@@ -209,7 +231,29 @@ public class adminClasses extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowOpened
 
     private void jDeleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jDeleteButtonActionPerformed
-        // TODO add your handling code here:
+        String value = jClassComboBox.getSelectedItem().toString();
+        
+        Connection Conn;
+        Database povezava = new Database();
+        Conn = povezava.getConnection();
+        
+        try 
+            { 
+                Statement stavek = Conn.createStatement();
+                String query = "SELECT deletecategory('"+ value +"')";
+                System.out.println(query);
+                Statement statement = Conn.createStatement();
+                statement.executeQuery(query);
+                
+                final JDialog dialog = new JDialog();
+                dialog.setAlwaysOnTop(true);
+                JOptionPane.showMessageDialog(dialog, "Successful deleted from categories.");
+            }
+        
+        catch (SQLException ex) {
+                Logger.getLogger(Register.class.getName()).log(Level.SEVERE, null, ex);
+            } 
+     
     }//GEN-LAST:event_jDeleteButtonActionPerformed
 
     private void jBackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBackButtonActionPerformed
@@ -237,10 +281,14 @@ public class adminClasses extends javax.swing.JFrame {
             try 
             { 
                 Statement stavek = Conn.createStatement();
-                String query = "INSERT INTO";
+                String query = "SELECT addcategory('"+ newName +"', null)";
                 System.out.println(query);
                 Statement statement = Conn.createStatement();
-                rezultat = statement.executeQuery(query);
+                statement.executeQuery(query);
+                
+                final JDialog dialog = new JDialog();
+                dialog.setAlwaysOnTop(true);
+                JOptionPane.showMessageDialog(dialog, "Successful insert into categories.");
             }
         
         catch (SQLException ex) {
