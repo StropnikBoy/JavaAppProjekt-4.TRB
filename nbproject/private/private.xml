@@ -3,8 +3,17 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
+            <file>file:/C:/Users/theph/OneDrive/Dokumenti/NetBeansProjects/JavaProjekt/src/javaprojekt/EditUserInfo.java</file>
+            <file>file:/C:/Users/theph/OneDrive/Dokumenti/NetBeansProjects/JavaProjekt/src/javaprojekt/userStore.java</file>
+            <file>file:/C:/Users/theph/OneDrive/Dokumenti/NetBeansProjects/JavaProjekt/src/javaprojekt/Login.java</file>
+            <file>file:/C:/Users/theph/OneDrive/Dokumenti/NetBeansProjects/JavaProjekt/src/javaprojekt/userHomePage.java</file>
+            <file>file:/C:/Users/theph/OneDrive/Dokumenti/NetBeansProjects/JavaProjekt/src/javaprojekt/Register.java</file>
+            <file>file:/C:/Users/theph/OneDrive/Dokumenti/NetBeansProjects/JavaProjekt/src/javaprojekt/Database.java</file>
+=======
             <file>file:/C:/Users/david/Desktop/JavaAppProjekt-4.TRB/src/javaprojekt/Global.java</file>
             <file>file:/C:/Users/david/Desktop/JavaAppProjekt-4.TRB/src/javaprojekt/userStore.java</file>
+>>>>>>> bb65317377182b7b782503ac75682a8a263f1bdd
         </group>
     </open-files>
 </project-private>

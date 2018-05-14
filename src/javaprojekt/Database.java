@@ -14,7 +14,6 @@ public class Database {
     private static String password = "dsB-EHsYK-Kv13r33nXKjX3eVR6XcJpg";
     private static Connection conn;
     
-    
     public static Connection getConnection() {
         try {
             Class.forName(driverName);

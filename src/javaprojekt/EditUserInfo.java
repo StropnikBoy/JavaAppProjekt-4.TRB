@@ -13,7 +13,15 @@ public class EditUserInfo extends javax.swing.JFrame {
     String value;
     
     public EditUserInfo(String name) {
+        this.setUndecorated(true);
+        this.setAlwaysOnTop(true);
+        this.setResizable(false);
+        this.setVisible(true);
         initComponents();
+        Toolkit tk = Toolkit.getDefaultToolkit();
+                int xSize = (int) tk.getScreenSize().getWidth();
+                int ySize = (int) tk.getScreenSize().getHeight();
+        this.setSize(xSize, ySize);
         value = name;
     }
 
@@ -29,6 +37,16 @@ public class EditUserInfo extends javax.swing.JFrame {
         jNameTextBox = new javax.swing.JTextField();
         jSurnameTextBox = new javax.swing.JTextField();
         jTitleLabel = new javax.swing.JLabel();
+        jEmailLabel1 = new javax.swing.JLabel();
+        jKrajComboBox = new javax.swing.JComboBox<>();
+        jEmailLabel2 = new javax.swing.JLabel();
+        jTelTextBox = new javax.swing.JTextField();
+        jDateLabel = new javax.swing.JLabel();
+        jDateTextBox = new javax.swing.JTextField();
+        jDateLabel1 = new javax.swing.JLabel();
+        jPasswordTextBox = new javax.swing.JTextField();
+        jSubmitButton = new javax.swing.JButton();
+        jCloseButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -38,13 +56,13 @@ public class EditUserInfo extends javax.swing.JFrame {
         });
 
         jSurnameLabel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jSurnameLabel.setText("Surname:");
+        jSurnameLabel.setText("New surname:");
 
         jNameLabel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jNameLabel.setText("Name:");
+        jNameLabel.setText("New name:");
 
         jEmailLabel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jEmailLabel.setText("Email:");
+        jEmailLabel.setText("New email:");
 
         jEmailTextBox.setEditable(false);
         jEmailTextBox.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -56,32 +74,93 @@ public class EditUserInfo extends javax.swing.JFrame {
         jTitleLabel.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
         jTitleLabel.setText("Edit your data");
 
+        jEmailLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jEmailLabel1.setText("New residence:");
+
+        jKrajComboBox.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+
+        jEmailLabel2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jEmailLabel2.setText("New tel:");
+
+        jTelTextBox.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+
+        jDateLabel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jDateLabel.setText("New bd:");
+
+        jDateTextBox.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+
+        jDateLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jDateLabel1.setText("New password:");
+
+        jPasswordTextBox.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+
+        jSubmitButton.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jSubmitButton.setText("Submit");
+        jSubmitButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jSubmitButtonActionPerformed(evt);
+            }
+        });
+
+        jCloseButton.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jCloseButton.setText("Close");
+        jCloseButton.setToolTipText("");
+        jCloseButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCloseButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(22, 22, 22)
+                .addGap(52, 52, 52)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTitleLabel)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jTitleLabel)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jEmailLabel)
-                            .addComponent(jSurnameLabel)
-                            .addComponent(jNameLabel))
-                        .addGap(26, 26, 26)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jEmailTextBox, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
-                            .addComponent(jNameTextBox)
-                            .addComponent(jSurnameTextBox))))
-                .addContainerGap(28, Short.MAX_VALUE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jEmailLabel1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
+                                .addComponent(jKrajComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jEmailLabel)
+                                    .addComponent(jSurnameLabel)
+                                    .addComponent(jNameLabel))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jEmailTextBox, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
+                                    .addComponent(jNameTextBox)
+                                    .addComponent(jSurnameTextBox)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jEmailLabel2)
+                                    .addComponent(jDateLabel)
+                                    .addComponent(jDateLabel1))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jTelTextBox)
+                                    .addComponent(jDateTextBox)
+                                    .addComponent(jPasswordTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addContainerGap(38, Short.MAX_VALUE))))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(122, 122, 122)
+                .addComponent(jSubmitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jCloseButton, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(7, 7, 7)
+                .addContainerGap()
                 .addComponent(jTitleLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jNameTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jNameLabel))
@@ -93,7 +172,27 @@ public class EditUserInfo extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jEmailTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jEmailLabel))
-                .addContainerGap(249, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jKrajComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jEmailLabel1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTelTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jEmailLabel2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jDateTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jDateLabel))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jPasswordTextBox, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jDateLabel1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jSubmitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jCloseButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(32, 32, 32))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -107,9 +206,10 @@ public class EditUserInfo extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
@@ -120,8 +220,31 @@ public class EditUserInfo extends javax.swing.JFrame {
         Database povezava = new Database();
         Conn = povezava.getConnection();
         
+        int id = 0;
+        
+        try 
+        { 
+            Statement stmt = Conn.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT * FROM residences");
+        
+            while (rs.next()) {
+                String pat = rs.getString("name");
+                String pat2 = rs.getString("post_number");
+                jKrajComboBox.addItem(pat2 + " " + pat);
+            }
+            
+            Conn.close();
+        }
+        
+        catch (SQLException ex) {
+            Logger.getLogger(Register.class.getName()).log(Level.SEVERE, null, ex);
+        } 
+
+        
         try 
         {
+            Conn = povezava.getConnection();
+            
             Statement stmt = Conn.createStatement();
             ResultSet rs = stmt.executeQuery("SELECT * FROM users WHERE email = '" + value +"'");
         
@@ -131,8 +254,13 @@ public class EditUserInfo extends javax.swing.JFrame {
                 pat = rs.getString("Surname");
                 jSurnameTextBox.setText(pat);
                 pat = rs.getString("Email");
-                jEmailTextBox.setText(pat);
+                jEmailTextBox.setText(pat); 
+                pat = rs.getString("Tel");  
+                jTelTextBox.setText(pat);
+                pat = rs.getString("Birthday");
+                jDateTextBox.setText(pat);                  
             }
+            
             Conn.close();
         }
         
@@ -140,6 +268,14 @@ public class EditUserInfo extends javax.swing.JFrame {
             Logger.getLogger(Register.class.getName()).log(Level.SEVERE, null, ex);
         } 
     }//GEN-LAST:event_formWindowOpened
+
+    private void jSubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSubmitButtonActionPerformed
+
+    }//GEN-LAST:event_jSubmitButtonActionPerformed
+
+    private void jCloseButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCloseButtonActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_jCloseButtonActionPerformed
 
     public static void main(String args[]) {
 
@@ -151,13 +287,23 @@ public class EditUserInfo extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jCloseButton;
+    private javax.swing.JLabel jDateLabel;
+    private javax.swing.JLabel jDateLabel1;
+    private javax.swing.JTextField jDateTextBox;
     private javax.swing.JLabel jEmailLabel;
+    private javax.swing.JLabel jEmailLabel1;
+    private javax.swing.JLabel jEmailLabel2;
     private javax.swing.JTextField jEmailTextBox;
+    private javax.swing.JComboBox<String> jKrajComboBox;
     private javax.swing.JLabel jNameLabel;
     private javax.swing.JTextField jNameTextBox;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField jPasswordTextBox;
+    private javax.swing.JButton jSubmitButton;
     private javax.swing.JLabel jSurnameLabel;
     private javax.swing.JTextField jSurnameTextBox;
+    private javax.swing.JTextField jTelTextBox;
     private javax.swing.JLabel jTitleLabel;
     // End of variables declaration//GEN-END:variables
 }
