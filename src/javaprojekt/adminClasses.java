@@ -10,6 +10,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JDialog;
 
 public class adminClasses extends javax.swing.JFrame {
+    
     public adminClasses() {
         this.setUndecorated(true);
         this.setAlwaysOnTop(true);
