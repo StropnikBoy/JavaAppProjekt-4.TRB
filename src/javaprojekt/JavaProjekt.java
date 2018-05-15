@@ -13,7 +13,7 @@ import java.sql.*;
 public class JavaProjekt {
 
     public static void main(String[] args) {
-        new HomePage().setVisible(true);
+        new homePage().setVisible(true);
     }
     
 }

@@ -60,7 +60,6 @@ public class userStore extends javax.swing.JFrame {
         jSizesComboBox = new javax.swing.JComboBox<>();
         jTypeLabel = new javax.swing.JLabel();
         jTypeComboBox = new javax.swing.JComboBox<>();
-        jPriceLabel = new javax.swing.JLabel();
         jWelcomeLabel = new javax.swing.JLabel();
         jGenderLabel = new javax.swing.JLabel();
         jTitleLabel = new javax.swing.JLabel();
@@ -130,7 +129,7 @@ public class userStore extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jCheckoutButton);
-        jCheckoutButton.setBounds(380, 290, 200, 50);
+        jCheckoutButton.setBounds(260, 440, 200, 50);
 
         jCancelButton.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jCancelButton.setText("Go Back");
@@ -165,11 +164,6 @@ public class userStore extends javax.swing.JFrame {
         jPanel1.add(jTypeComboBox);
         jTypeComboBox.setBounds(120, 110, 197, 50);
 
-        jPriceLabel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jPriceLabel.setText("Type:");
-        jPanel1.add(jPriceLabel);
-        jPriceLabel.setBounds(280, 450, 60, 29);
-
         jWelcomeLabel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jWelcomeLabel.setText("Welcome:");
         jPanel1.add(jWelcomeLabel);
@@ -189,16 +183,16 @@ public class userStore extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 816, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 24, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(126, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 662, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 514, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 26, Short.MAX_VALUE))
         );
 
         pack();
@@ -367,13 +361,12 @@ public class userStore extends javax.swing.JFrame {
                 Logger.getLogger(Register.class.getName()).log(Level.SEVERE, null, ex);
             }
         }*/
-                         
+        jSizesComboBox.removeAllItems();
         jSizesComboBox.addItem("S");
         jSizesComboBox.addItem("M");
         jSizesComboBox.addItem("L");
         jSizesComboBox.addItem("XL");
     }//GEN-LAST:event_jNameComboBoxItemStateChanged
-
 
     public static void main(String args[]) {
 
@@ -395,7 +388,6 @@ public class userStore extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jNameComboBox;
     private javax.swing.JLabel jNameLabel;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JLabel jPriceLabel;
     private javax.swing.JComboBox<String> jSizesComboBox;
     private javax.swing.JLabel jSizesLabel;
     private javax.swing.JLabel jTitleLabel;

@@ -1,11 +1,20 @@
 package javaprojekt;
-import javaprojekt.HomePage;
+import java.awt.Toolkit;
+import javaprojekt.homePage;
 import javaprojekt.adminClasses;
 
 public class AdminHomePage extends javax.swing.JFrame {
 
     public AdminHomePage() {
+        this.setUndecorated(true);
+        this.setAlwaysOnTop(true);
+        this.setResizable(false);
+        this.setVisible(true);
         initComponents();
+        Toolkit tk = Toolkit.getDefaultToolkit();
+                int xSize = (int) tk.getScreenSize().getWidth();
+                int ySize = (int) tk.getScreenSize().getHeight();
+        this.setSize(xSize, ySize);
     }
 
     @SuppressWarnings("unchecked")
@@ -14,7 +23,6 @@ public class AdminHomePage extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jTitleLabel = new javax.swing.JTextField();
-        jOrdersButton = new javax.swing.JButton();
         jWelcomeLabel = new javax.swing.JLabel();
         jAddItemsButton = new javax.swing.JButton();
         jEditItemsButton = new javax.swing.JButton();
@@ -26,19 +34,11 @@ public class AdminHomePage extends javax.swing.JFrame {
         jTitleLabel.setFont(new java.awt.Font("Times New Roman", 1, 48)); // NOI18N
         jTitleLabel.setText("Admin Page");
 
-        jOrdersButton.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jOrdersButton.setText("Confrim Orders");
-        jOrdersButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jOrdersButtonActionPerformed(evt);
-            }
-        });
-
         jWelcomeLabel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jWelcomeLabel.setText("Welcome");
 
         jAddItemsButton.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jAddItemsButton.setText("Add Items");
+        jAddItemsButton.setText("Brands");
         jAddItemsButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jAddItemsButtonActionPerformed(evt);
@@ -46,7 +46,7 @@ public class AdminHomePage extends javax.swing.JFrame {
         });
 
         jEditItemsButton.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jEditItemsButton.setText("Update/Delete");
+        jEditItemsButton.setText("Items");
         jEditItemsButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jEditItemsButtonActionPerformed(evt);
@@ -85,11 +85,10 @@ public class AdminHomePage extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jAddItemsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jOrdersButton, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
                                 .addComponent(jEditItemsButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jLogoutButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jClassesButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
-                .addContainerGap(61, Short.MAX_VALUE))
+                                .addComponent(jClassesButton, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -99,27 +98,30 @@ public class AdminHomePage extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jWelcomeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jOrdersButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jClassesButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jAddItemsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jEditItemsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLogoutButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(44, 44, 44))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(287, 287, 287)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(118, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 28, Short.MAX_VALUE))
         );
 
         pack();
@@ -133,22 +135,20 @@ public class AdminHomePage extends javax.swing.JFrame {
 
     private void jAddItemsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jAddItemsButtonActionPerformed
         this.setVisible(false);
-        adminClasses NewItems = new adminClasses();
-        NewItems.setVisible(true);
+        adminBrands Brands = new adminBrands();
+        Brands.setVisible(true);
     }//GEN-LAST:event_jAddItemsButtonActionPerformed
-
-    private void jOrdersButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jOrdersButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jOrdersButtonActionPerformed
 
     private void jLogoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jLogoutButtonActionPerformed
         this.setVisible(false);
-        HomePage Home = new HomePage();
+        homePage Home = new homePage();
         Home.setVisible(true);
     }//GEN-LAST:event_jLogoutButtonActionPerformed
 
     private void jClassesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jClassesButtonActionPerformed
-        // TODO add your handling code here:
+        this.setVisible(false);
+        adminClasses Class = new adminClasses();
+        Class.setVisible(true);
     }//GEN-LAST:event_jClassesButtonActionPerformed
 
     public static void main(String args[]) {
@@ -165,7 +165,6 @@ public class AdminHomePage extends javax.swing.JFrame {
     private javax.swing.JButton jClassesButton;
     private javax.swing.JButton jEditItemsButton;
     private javax.swing.JButton jLogoutButton;
-    private javax.swing.JButton jOrdersButton;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField jTitleLabel;
     private javax.swing.JLabel jWelcomeLabel;
